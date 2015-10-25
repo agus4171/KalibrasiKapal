@@ -20,6 +20,8 @@ namespace KalibrasiKapal
         private double dwt;
         private string jns_muatan;
 
+        private decimal d;
+
         //set nilai inputan
         public void setLoa(double loaInp)
         {
@@ -123,15 +125,13 @@ namespace KalibrasiKapal
         }
         public double getU()
         {
-            return Math.Log(kapal / 100);
+            return Math.Log10(kapal / 100);
         }
-        public float getCs()
+        public double getCs()
         {
-            //decimal d = Decimal.Parse("0.06E-(0.5 * getU() + (0.1 * Math.Pow(getU(), 2.45)))", System.Globalization.NumberStyles.Float);
-            //return Convert.ToDouble(Decimal.Parse("0.06E-(0.5 * getU() + (0.1 * Math.Pow(getU(), 2.45)))", System.Globalization.NumberStyles.Float));
-            return 0;
+            return getCso() + (0.06 * Math.Exp(-(0.5 * getU()) + (0.1 * Math.Pow(getU(), 2.45))));
         }
-        public double getBeratBaja()
+        public double getWst()
         {
             return lpp * breadth * getDa() * getCs();
         }

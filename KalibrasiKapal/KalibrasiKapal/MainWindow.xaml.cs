@@ -98,6 +98,9 @@ namespace KalibrasiKapal
             double VDH_lV = newKapal.getVDH_lV();
             double VHW = newKapal.getVWH();
             double VDH = newKapal.getVDH();
+            double Cs = newKapal.getCs();
+            double WST = newKapal.getWst();
+            double U = newKapal.getU();
             listBox.Items.Clear();
             listBox.Items.Add("Panjang Garis Air : " + lwl.ToString());
             listBox.Items.Add("Froude Number : " + fn.ToString());
@@ -112,6 +115,9 @@ namespace KalibrasiKapal
             listBox.Items.Add("Volume Layer IV : " + VDH_lV.ToString());
             listBox.Items.Add("Volume Wheel House : " + VHW.ToString());
             listBox.Items.Add("Volume Total : " + VDH.ToString());
+            listBox.Items.Add("Cs : " + Cs.ToString());
+            listBox.Items.Add("Berat Baja Total : " + WST.ToString());
+            listBox.Items.Add("U : " + U.ToString());
             //Console.WriteLine(fn);
             //double lwl = newKapal.getLwl();
             //MessageBox.Show("lwl: "+lwl.ToString() +"fn: "+fn.ToString()+"cb: "+cb.ToString() +"v: "+v.ToString() +"d: "+d.ToString());
