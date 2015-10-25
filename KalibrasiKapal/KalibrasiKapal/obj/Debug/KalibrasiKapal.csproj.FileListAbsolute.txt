@@ -1,0 +1,13 @@
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\bin\Debug\KalibrasiKapal.exe.config
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\bin\Debug\KalibrasiKapal.exe
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\bin\Debug\KalibrasiKapal.pdb
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\MainWindow.g.cs
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\App.g.cs
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\KalibrasiKapal_MarkupCompile.cache
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\KalibrasiKapal_MarkupCompile.lref
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\MainWindow.baml
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\KalibrasiKapal.g.resources
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\KalibrasiKapal.Properties.Resources.resources
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\KalibrasiKapal.csproj.GenerateResource.Cache
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\KalibrasiKapal.exe
+F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapal\obj\Debug\KalibrasiKapal.pdb
