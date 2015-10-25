@@ -22,6 +22,7 @@ namespace KalibrasiKapal
     {
 
         //private List<string>[] list;
+        private double csoType;
         public MainWindow()
         {            
             InitializeComponent();
@@ -84,6 +85,10 @@ namespace KalibrasiKapal
             {
                 newKapal.setDwt(double.Parse(dwtInp.Text));
             }
+            if (!string.IsNullOrWhiteSpace(speedInp.Text))
+            {
+                newKapal.setJnsKapal(csoType);
+            }
 
             double lwl = newKapal.getLwl();
             double fn = newKapal.getFn();
@@ -134,12 +139,12 @@ namespace KalibrasiKapal
             //TypeKapal typeKapalCso = new TypeKapal();
             //ComboBox cmbx = (ComboBox)sender;
             //typeKapalInp type = ((typeKapalInp)cmbx.SelectedItem);
-            //double csoType;
+            
             string type = typeKapalInp.SelectedValue.ToString();
-            /*if (type.Equals("Bulk carriers"))
+            if (type.Equals("Bulk carriers"))
             {
-                typeKapalCso.CSO = 0.07;
-                //csoType = 0.07;
+                //typeKapalCso.CSO = 0.07;
+                csoType = 0.07;
             }
             else if (type.Equals("Cargo ship (1 decks)"))
             {
@@ -189,7 +194,7 @@ namespace KalibrasiKapal
             {
                 csoType = 0.0645;
             }
-            MessageBox.Show(csoType.ToString());*/
+            MessageBox.Show(csoType.ToString());
         }
     }
 }

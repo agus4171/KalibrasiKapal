@@ -15,10 +15,10 @@ namespace KalibrasiKapal
         private double depth;
         private double draught;
         private double speed;
-        private int jml_kapal;
-        private double typeKapal;
+        private int jmlKapal;
+        private double jnsKapal;
         private double dwt;
-        private string jns_muatan;
+        private string jnsMuatan;
 
         private decimal d;
 
@@ -51,9 +51,9 @@ namespace KalibrasiKapal
         {
             dwt = dwtInp / 1000;
         }
-        public void setTypeKapal(double typeKapalInp)
+        public void setJnsKapal(double jnsKapalInp)
         {
-            typeKapal = typeKapalInp;
+            jnsKapal = jnsKapalInp;
         }
 
         //pengolahan dari inputan
@@ -121,7 +121,7 @@ namespace KalibrasiKapal
         }
         public double getCso( )
         {
-            return 0.0752;
+            return jnsKapal;
         }
         public double getU()
         {
