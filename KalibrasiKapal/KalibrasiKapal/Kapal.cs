@@ -20,120 +20,214 @@ namespace KalibrasiKapal
         private double dwt;
         private string jnsMuatan;
 
-        private decimal d;
+        public double Loa
+        {
+            get
+            {
+                return loa;
+            }
 
-        //set nilai inputan
-        public void setLoa(double loaInp)
-        {
-            loa = loaInp;
+            set
+            {
+                loa = value;
+            }
         }
-        public void setLpp(double lppInp)
+
+        public double Lpp
         {
-            lpp = lppInp;
+            get
+            {
+                return lpp;
+            }
+
+            set
+            {
+                lpp = value;
+            }
         }
-        public void setBreadth(double breadthInp)
+
+        public double Breadth
         {
-            breadth = breadthInp;
+            get
+            {
+                return breadth;
+            }
+
+            set
+            {
+                breadth = value;
+            }
         }
-        public void setDepth(double depthInp)
+
+        public double Depth
         {
-            depth = depthInp;
+            get
+            {
+                return depth;
+            }
+
+            set
+            {
+                depth = value;
+            }
         }
-        public void setDraught(double draughtInp)
+
+        public double Draught
         {
-            draught = draughtInp;
+            get
+            {
+                return draught;
+            }
+
+            set
+            {
+                draught = value;
+            }
         }
-        public void setSpeed(double speedInp)
+
+        public double Speed
         {
-            speed = speedInp;
+            get
+            {
+                return speed * 0.5144;
+            }
+
+            set
+            {
+                speed = value;
+            }
         }
-        public void setDwt(double dwtInp)
+
+        public int JmlKapal
         {
-            dwt = dwtInp / 1000;
+            get
+            {
+                return jmlKapal;
+            }
+
+            set
+            {
+                jmlKapal = value;
+            }
         }
-        public void setJnsKapal(double jnsKapalInp)
+
+        public double JnsKapal
         {
-            jnsKapal = jnsKapalInp;
+            get
+            {
+                return jnsKapal;
+            }
+
+            set
+            {
+                jnsKapal = value;
+            }
+        }
+
+        public double Dwt
+        {
+            get
+            {
+                return dwt / 1000;
+            }
+
+            set
+            {
+                dwt = value;
+            }
+        }
+
+        public string JnsMuatan
+        {
+            get
+            {
+                return jnsMuatan;
+            }
+
+            set
+            {
+                jnsMuatan = value;
+            }
         }
 
         //pengolahan dari inputan
-        public double getFn()
+        public double setFn()
         {
-            return speed / Math.Sqrt(9.81 * lpp);
+            return Speed / Math.Sqrt(9.81 * Lpp);
         }
-        public double getLwl()
+        public double setLwl()
         {
-            return 1.04 * lpp;
+            return 1.04 * Lpp;
         }
-        public double getCb()
+        public double setCb()
         {
-            return (-4.22) + (27.8 * (Math.Sqrt(getFn()))) - (39.1 * getFn()) + (46.4 * Math.Pow(getFn(), 3));
+            return (-4.22) + (27.8 * (Math.Sqrt(setFn()))) - (39.1 * setFn()) + (46.4 * Math.Pow(setFn(), 3));
         }
-        public double getV()
+        public double setV()
         {
-            return lpp * breadth * draught * getCb();
+            return Lpp * Breadth * Draught * setCb();
         }
-        public double getD()
+        public double setD()
         {
-            return getV() * 1.025;
+            return setV() * 1.025;
         }
 
         //perhitungan volume superstructure
-        public double getVForcastle()
+        public double setVForcastle()
         {
-            return 0.5 * (0.1 * lpp) * dwt * 2.4;
+            return 0.5 * (0.1 * Lpp) * Dwt * 2.4;
         }
-        public double getVPoop()
+        public double setVPoop()
         {
-            return (0.2 * lpp) * dwt * 2.4;
+            return (0.2 * Lpp) * Dwt * 2.4;
         }
-        public double getVTotal()
+        public double setVTotal()
         {
-            return getVForcastle() + getVPoop();
+            return setVForcastle() + setVPoop();
         }
 
         //perhitungan volume deckhouse
-        public double getVDH_ll()
+        public double setVDH_ll()
         {
-            return (0.15 * lpp) * 13.00 * 2.4;
+            return (0.15 * Lpp) * 13.00 * 2.4;
         }
-        public double getVDH_lll()
+        public double setVDH_lll()
         {
-            return (0.1 * lpp) * 11.00 * 2.4;
+            return (0.1 * Lpp) * 11.00 * 2.4;
         }
-        public double getVDH_lV()
+        public double setVDH_lV()
         {
-            return (0.075 * lpp) * 9.00 * 2.4;
+            return (0.075 * Lpp) * 9.00 * 2.4;
         }
-        public double getVWH()
+        public double setVWH()
         {
-            return (0.05 * lpp) * 6.00 * 2.4;
+            return (0.05 * Lpp) * 6.00 * 2.4;
         }
-        public double getVDH()
+        public double setVDH()
         {
-            return getVDH_ll() + getVDH_lll() + getVDH_lV() + getVWH();
+            return setVDH_ll() + setVDH_lll() + setVDH_lV() + setVWH();
         }
 
         //perhitungan berat baja
-        public double getDa()
+        public double setDa()
         {
-            return depth + (getVTotal() + getVDH()) / (lpp * breadth);
+            return Depth + (setVTotal() + setVDH()) / (Lpp * Breadth);
         }
-        public double getCso( )
+        public double setCso( )
         {
-            return jnsKapal;
+            return JnsKapal;
         }
-        public double getU()
+        public double setU()
         {
             return Math.Log10(kapal / 100);
         }
-        public double getCs()
+        public double setCs()
         {
-            return getCso() + (0.06 * Math.Exp(-(0.5 * getU()) + (0.1 * Math.Pow(getU(), 2.45))));
+            return setCso() + (0.06 * Math.Exp(-(0.5 * setU()) + (0.1 * Math.Pow(setU(), 2.45))));
         }
-        public double getWst()
+        public double setWst()
         {
-            return lpp * breadth * getDa() * getCs();
+            return Lpp * Breadth * setDa() * setCs();
         }
     }
 }

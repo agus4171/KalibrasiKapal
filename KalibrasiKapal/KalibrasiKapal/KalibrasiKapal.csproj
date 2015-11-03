@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Fasilitas.cs" />
     <Compile Include="Kapal.cs" />
     <Compile Include="TypeKapal.cs" />
     <Page Include="MainWindow.xaml">

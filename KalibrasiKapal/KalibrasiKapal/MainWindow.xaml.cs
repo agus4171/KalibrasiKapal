@@ -21,19 +21,18 @@ namespace KalibrasiKapal
     public partial class MainWindow : Window
     {
 
-        //private List<string>[] list;
+        private List<TypeKapal> TypeList = new List<TypeKapal>();
+        Fasilitas FasilUtama = new Fasilitas();
         private double csoType;
         public MainWindow()
         {            
             InitializeComponent();
-            TypeKapal();
+            TypeKapal();            
         }
 
-        void TypeKapal()
+        private void TypeKapal()
         {
             typeKapalInp.Items.Clear();
-            //TypeKapal type = new TypeKapal();
-            List<TypeKapal> TypeList = new List<TypeKapal>();
             TypeList.Add(new TypeKapal("Bulk carriers", 0.07));
             TypeList.Add(new TypeKapal("Cargo ship (1 decks)", 0.07));
             TypeList.Add(new TypeKapal("Cargo ship (2 decks)", 0.076));
@@ -49,63 +48,75 @@ namespace KalibrasiKapal
             TypeList.Add(new TypeKapal("VLCC", 0.0645));
             foreach(var list in TypeList)
             {
-                typeKapalInp.Items.Add(list.Kapal);
-            }
-         
+                typeKapalInp.Items.Add(list.JnsKapal);
+            }         
         }     
 
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
             Kapal newKapal = new Kapal();
+            Fasilitas fasil = new Fasilitas();
             if(!string.IsNullOrWhiteSpace(loaInp.Text))
             {
-                newKapal.setLoa(double.Parse(loaInp.Text));
+                newKapal.Loa = double.Parse(loaInp.Text);
             }
             if (!string.IsNullOrWhiteSpace(lppInp.Text))
             {
-                newKapal.setLpp(double.Parse(lppInp.Text));
+                newKapal.Lpp = double.Parse(lppInp.Text);
             }
             if (!string.IsNullOrWhiteSpace(breadthInp.Text))
             {
-                newKapal.setBreadth(double.Parse(breadthInp.Text));
+                newKapal.Breadth = double.Parse(breadthInp.Text);
             }
             if (!string.IsNullOrWhiteSpace(depthInp.Text))
             {
-                newKapal.setDepth(double.Parse(depthInp.Text));
+                newKapal.Depth = double.Parse(depthInp.Text);
             }
             if (!string.IsNullOrWhiteSpace(draughtInp.Text))
             {
-                newKapal.setDraught(double.Parse(draughtInp.Text));
+                newKapal.Draught = double.Parse(draughtInp.Text);
             }
             if (!string.IsNullOrWhiteSpace(speedInp.Text))
             {
-                newKapal.setSpeed(double.Parse(speedInp.Text));
+                newKapal.Speed = double.Parse(speedInp.Text);
             }
-            if (!string.IsNullOrWhiteSpace(speedInp.Text))
+            if (!string.IsNullOrWhiteSpace(dwtInp.Text))
             {
-                newKapal.setDwt(double.Parse(dwtInp.Text));
+                newKapal.Dwt = double.Parse(dwtInp.Text);
             }
-            if (!string.IsNullOrWhiteSpace(speedInp.Text))
+            if (!string.IsNullOrWhiteSpace(typeKapalInp.Text))
             {
-                newKapal.setJnsKapal(csoType);
+                newKapal.JnsKapal = csoType;
             }
 
-            double lwl = newKapal.getLwl();
-            double fn = newKapal.getFn();
-            double cb = newKapal.getCb();
-            double v = newKapal.getV();
-            double d = newKapal.getD();
-            double VForcastle = newKapal.getVForcastle();
-            double VPoop = newKapal.getVPoop();
-            double VTotal = newKapal.getVTotal();
-            double VDH_ll = newKapal.getVDH_ll();
-            double VDH_lll = newKapal.getVDH_lll();
-            double VDH_lV = newKapal.getVDH_lV();
-            double VHW = newKapal.getVWH();
-            double VDH = newKapal.getVDH();
-            double Cs = newKapal.getCs();
-            double WST = newKapal.getWst();
-            double U = newKapal.getU();
+            double lwl = newKapal.setLwl();
+            double fn = newKapal.setFn();
+            double cb = newKapal.setCb();
+            double v = newKapal.setV();
+            double d = newKapal.setD();
+            double VForcastle = newKapal.setVForcastle();
+            double VPoop = newKapal.setVPoop();
+            double VTotal = newKapal.setVTotal();
+            double VDH_ll = newKapal.setVDH_ll();
+            double VDH_lll = newKapal.setVDH_lll();
+            double VDH_lV = newKapal.setVDH_lV();
+            double VHW = newKapal.setVWH();
+            double VDH = newKapal.setVDH();
+            double Cs = newKapal.setCs();
+            double WST = newKapal.setWst();
+            double U = newKapal.setU();
+            fasil.WstKapal = WST;
+            PlateStraightening();
+            RollerConveyor();
+            ShotBlasting();
+            PrimeringMachine();
+            CuttingMachine();
+            CNC_Cutting();
+            /*FrameBender();
+            
+            CuttingMachineAuto();
+            BendRollMachine();
+            */
             listBox.Items.Clear();
             listBox.Items.Add("Panjang Garis Air : " + lwl.ToString("0.###")+" m");
             listBox.Items.Add("Froude Number : " + fn.ToString("0.###") + " ");
@@ -124,7 +135,7 @@ namespace KalibrasiKapal
             listBox.Items.Add("Berat Baja Total : " + WST.ToString("0.###") + " ton");
             listBox.Items.Add("U : " + U.ToString("0.###") + " ");
             //Console.WriteLine(fn);
-            //double lwl = newKapal.getLwl();
+            //double lwl = newKapal.setLwl();
             //MessageBox.Show("lwl: "+lwl.ToString() +"fn: "+fn.ToString()+"cb: "+cb.ToString() +"v: "+v.ToString() +"d: "+d.ToString());
             //MessageBox.Show("lwl: " + string.Format("{0:0.##}", lwl) + "fn: " + string.Format("{0:0.##}", fn) + "cb: " + cb.ToString("0.##") + "v: " + v.ToString("0.##") + "d: " + d.ToString("0.##"));
         }
@@ -135,66 +146,333 @@ namespace KalibrasiKapal
         }
 
         private void typeKapalInp_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //TypeKapal typeKapalCso = new TypeKapal();
-            //ComboBox cmbx = (ComboBox)sender;
-            //typeKapalInp type = ((typeKapalInp)cmbx.SelectedItem);
-            
+        {            
             string type = typeKapalInp.SelectedValue.ToString();
-            if (type.Equals("Bulk carriers"))
-            {
-                //typeKapalCso.CSO = 0.07;
-                csoType = 0.07;
-            }
-            else if (type.Equals("Cargo ship (1 decks)"))
-            {
-                csoType = 0.07;
-            }
-            else if (type.Equals("Cargo ship (2 decks)"))
-            {
-                csoType = 0.076;
-            }
-            else if (type.Equals("Cargo ship (3 decks)"))
-            {
-                csoType = 0.082;
-            }
-            else if (type.Equals("Passenger ship"))
-            {
-                csoType = 0.058;
-            }
-            else if (type.Equals("Product carriers"))
-            {
-                csoType = 0.0664;
-            }
-            else if (type.Equals("Reefers"))
-            {
-                csoType = 0.0609;
-            }
-            else if (type.Equals("Rescue vessel"))
-            {
-                csoType = 0.0232;
-            }
-            else if (type.Equals("Support vessels"))
-            {
-                csoType = 0.0974;
-            }
-            else if (type.Equals("Tanker"))
-            {
-                csoType = 0.0752;
-            }
-            else if (type.Equals("Train ferries"))
-            {
-                csoType = 0.065;
-            }
-            else if (type.Equals("Tugs"))
-            {
-                csoType = 0.0892;
-            }
-            else if (type.Equals("VLCC"))
-            {
-                csoType = 0.0645;
-            }
-            MessageBox.Show(csoType.ToString());
+            TypeKapal kapal = TypeList.Find(k => k.JnsKapal == type);
+            csoType = kapal.Cso;
         }
+
+        private void PlateStraightening()
+        {            
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 7;
+            if (FasilUtama.setPlateStr() < 0.9)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void RollerConveyor()
+        {
+            //Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (FasilUtama.setPlateStr() < 0.9)
+            {
+                rollerCon.Text = "1";
+            }
+            else
+            {
+                rollerCon.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void ShotBlasting()
+        {
+            //Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 1.25;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (FasilUtama.setPlateStr() < 0.9)
+            {
+                shotBlas.Text = "1";
+            }
+            else
+            {
+                shotBlas.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void PrimeringMachine()
+        {
+            //Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 1.25;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (FasilUtama.setPlateStr() < 0.9)
+            {
+                primeMachine.Text = "1";
+            }
+            else
+            {
+                primeMachine.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void CuttingMachine()
+        {
+            //Fasilitas FasilUtama = new Fasilitas();
+            //FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 3;
+            FasilUtama.BebanKerja = 5;
+            //FasilUtama.KapaMesin = 0.3;
+            //MessageBox.Show(FasilUtama.setCuttMachine().ToString());
+            /*if (FasilUtama.setCuttMachine() < 0.9)
+            {
+                cuttMachine.Text = "1";
+            }
+            else
+            {
+                cuttMachine.Text = Math.Round(Convert.ToDecimal(FasilUtama.setCuttMachine())).ToString();
+            }*/
+        }
+        /*private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }*/
+        /*private void FrameBender()
+        {
+            //Fasilitas FasilUtama = new Fasilitas();
+            //FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 3;
+            FasilUtama.BebanKerja = 6;
+            MessageBox.Show(FasilUtama.setCuttMachine().ToString());
+            /*if (FasilUtama.setCuttMachine() < 0.9)
+            {
+                frameBend.Text = "1";
+            }
+            else
+            {
+                frameBend.Text = Math.Round(Convert.ToDecimal(FasilUtama.setCuttMachine())).ToString();
+            }
+        }*/
+        private void CNC_Cutting()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            //FasilUtama.KecMesin = 2.10;
+            FasilUtama.KapaMesin = 10;
+            FasilUtama.WaktuKerja = 3;
+            //FasilUtama.BebanKerja = 6;
+            //MessageBox.Show(FasilUtama.KapaMesin.ToString());
+            MessageBox.Show(FasilUtama.setCNC_Machine().ToString());
+            /*if (FasilUtama.setCNC_Machine() < 0.9)
+            {
+                cncCutt.Text = "1";
+            }
+            else
+            {
+                cncCutt.Text = Math.Round(FasilUtama.setCNC_Machine()).ToString();
+            }*/
+        }
+        /*private void CuttingMachineAuto()
+        {
+            //Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KapaMesin = 4;
+            FasilUtama.WaktuKerja = 2;
+            //FasilUtama.BebanKerja = 6;
+            //CuttMachineAuto.Text = FasilUtama.setCuttMachineAuto().ToString();
+            if (FasilUtama.setCuttMachineAuto() < 0.9)
+            {
+                CuttMachineAuto.Text = "1";
+            }
+            else
+            {
+                CuttMachineAuto.Text = Math.Round(Convert.ToDecimal(FasilUtama.setCuttMachineAuto())).ToString();
+            }
+        }
+        private void BendRollMachine()
+        {
+            //Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KapaMesin = 15;
+            FasilUtama.WaktuKerja = 3;
+            FasilUtama.BebanKerja = 6;
+            bendRoll.Text = FasilUtama.setBendRollMachine().ToString();
+            if (FasilUtama.setBendRollMachine() < 0.9)
+            {
+                bendRoll.Text = "1";
+            }
+            else
+            {
+                bendRoll.Text = Math.Round(Convert.ToDecimal(FasilUtama.setBendRollMachine())).ToString();
+            }
+        }
+        /*private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }
+        private void rollerConveyor()
+        {
+            Fasilitas FasilUtama = new Fasilitas();
+            FasilUtama.KecMesin = 2.10;
+            FasilUtama.WaktuKerja = 2;
+            FasilUtama.BebanKerja = 6;
+            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            {
+                plateStr.Text = "1";
+            }
+            else
+            {
+                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+            }
+        }*/
     }
 }
