@@ -77,24 +77,24 @@ namespace KalibrasiKapalDev
 
         private void HitungKapal()
         {
-            BeratBaja.Items.Add("Nama Kapal: " + KapalBaru.Nama);
-            BeratBaja.Items.Add("Froude Number: " + KapalBaru.setFn().ToString("0.###") +"");
-            BeratBaja.Items.Add("Panjang Garis Air: " + KapalBaru.setLwl().ToString("0.###") +" m");
-            BeratBaja.Items.Add("Volume Displasemen: " + KapalBaru.setV().ToString("0.###") +" m^3");
-            BeratBaja.Items.Add("Displasemen: " + KapalBaru.setD().ToString("0.###") +" ton");
-            BeratBaja.Items.Add("Coeffisien Block: " + KapalBaru.setCb().ToString("0.###") +"");
-            BeratBaja.Items.Add("Volume Forecastle: " + KapalBaru.setVForcastle().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("Volume Poop: " + KapalBaru.setVPoop().ToString("0.###") +" m^3");
-            BeratBaja.Items.Add("Volume Total(Va): " + KapalBaru.setVTotal().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("Volume Layer II: " + KapalBaru.setVDH_ll().ToString("0.###") +" m^3");
-            BeratBaja.Items.Add("Volume Layer III: " + KapalBaru.setVDH_lll().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("Volume Layer IV: " + KapalBaru.setVDH_lV().ToString("0.###") +" m^3");
-            BeratBaja.Items.Add("Volume Wheel House: " + KapalBaru.setVWH().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("Volume Total(Vdh): " + KapalBaru.setVDH().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("Tinggi Kapal(Da): " + KapalBaru.setD().ToString("0.###") + " m");
-            BeratBaja.Items.Add("U: " + KapalBaru.setU().ToString("0.###") + "");
-            BeratBaja.Items.Add("Cs: " + KapalBaru.setCs().ToString("0.###") + "");
-            BeratBaja.Items.Add("Berat Baja Total: " + KapalBaru.setWst().ToString("0.###") + " ton");
+            BeratBaja.Items.Add("1. Nama Kapal: " + KapalBaru.Nama);
+            BeratBaja.Items.Add("2. Froude Number: " + KapalBaru.setFn().ToString("0.###") +"");
+            BeratBaja.Items.Add("3. Panjang Garis Air: " + KapalBaru.setLwl().ToString("0.###") +" m");
+            BeratBaja.Items.Add("4. Volume Displasemen: " + KapalBaru.setV().ToString("0.###") +" m^3");
+            BeratBaja.Items.Add("5. Displasemen: " + KapalBaru.setD().ToString("0.###") +" ton");
+            BeratBaja.Items.Add("6. Coeffisien Block: " + KapalBaru.setCb().ToString("0.###") +"");
+            BeratBaja.Items.Add("7. Volume Forecastle: " + KapalBaru.setVForcastle().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("8. Volume Poop: " + KapalBaru.setVPoop().ToString("0.###") +" m^3");
+            BeratBaja.Items.Add("9. Volume Total(Va): " + KapalBaru.setVTotal().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("10. Volume Layer II: " + KapalBaru.setVDH_ll().ToString("0.###") +" m^3");
+            BeratBaja.Items.Add("11. Volume Layer III: " + KapalBaru.setVDH_lll().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("12. Volume Layer IV: " + KapalBaru.setVDH_lV().ToString("0.###") +" m^3");
+            BeratBaja.Items.Add("13. Volume Wheel House: " + KapalBaru.setVWH().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("14. Volume Total(Vdh): " + KapalBaru.setVDH().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("15. Tinggi Kapal(Da): " + KapalBaru.setD().ToString("0.###") + " m");
+            BeratBaja.Items.Add("16. U: " + KapalBaru.setU().ToString("0.###") + "");
+            BeratBaja.Items.Add("17. Cs: " + KapalBaru.setCs().ToString("0.###") + "");
+            BeratBaja.Items.Add("18. Berat Baja Total: " + KapalBaru.setWst().ToString("0.###") + " ton");
             BeratBaja.Items.Add("");
         }
 
@@ -102,34 +102,34 @@ namespace KalibrasiKapalDev
         {
             Fasilitas.Items.Add("Nama Kapal: " + KapalBaru.Nama);
             Fasilitas.Items.Add("Fasilitas Utama:");
-            Fasilitas.Items.Add("Plate Straightening Roller: " + Plate + " mesin");
-            Fasilitas.Items.Add("Roller Conveyor: " + Conveyor + " mesin");
-            Fasilitas.Items.Add("Shot Blasting: " + Blasting + " mesin");
-            Fasilitas.Items.Add("Primering Machine: " + Primering+ " mesin");
-            Fasilitas.Items.Add("Cutting Machine (NC SAFRO): " + Cutting + " mesin");
-            Fasilitas.Items.Add("Bending Machine 1000 Ton: " + Bending10 + " mesin");
-            Fasilitas.Items.Add("Frame Bender: " + Bender + " mesin");
-            Fasilitas.Items.Add("CNC Cutting (Plasma): " + CNC + " mesin");
-            Fasilitas.Items.Add("Cutting Machine (Semi Automatic): " + CuttingAuto + " mesin");
-            Fasilitas.Items.Add("Bending Roll Machine 1500 Ton: " + BendRoll + " mesin");
-            Fasilitas.Items.Add("Bending Machine 500 Ton: " + Bending5 + " mesin");
-            Fasilitas.Items.Add("Welding Machine FCAW (Semi Automatic): " + Welding + " mesin");
-            Fasilitas.Items.Add("Mobile Web Gantry: " + Gantry + " mesin");
-            Fasilitas.Items.Add("Service Welding Gantry: " + ServiceWeld + " mesin");
-            Fasilitas.Items.Add("Mobile Stiffener Gantry: " + Stiffener + " mesin");
-            Fasilitas.Items.Add("Transfer Trolley: " + Trolley + " mesin");
-            Fasilitas.Items.Add("Fillet Welding Gantry: " + FilletWeld + " mesin");
-            Fasilitas.Items.Add("NC Pipe Bender: " + NCPip + " mesin");
-            Fasilitas.Items.Add("Semi Auto Gas Cutting: " + SemiAuto + " mesin");
-            Fasilitas.Items.Add("Pipe Bender 50 A: " + PipeBend + " mesin");
-            Fasilitas.Items.Add("Pipe Bender 65 A: " + PipeBend65 + " mesin");
-            Fasilitas.Items.Add("Auto Gas Cutting Machine: " + AutoGasCutt + " mesin");
+            Fasilitas.Items.Add("1. Plate Straightening Roller: " + Plate + " mesin");
+            Fasilitas.Items.Add("2. Roller Conveyor: " + Conveyor + " mesin");
+            Fasilitas.Items.Add("3. Shot Blasting: " + Blasting + " mesin");
+            Fasilitas.Items.Add("4. Primering Machine: " + Primering+ " mesin");
+            Fasilitas.Items.Add("5. Cutting Machine (NC SAFRO): " + Cutting + " mesin");
+            Fasilitas.Items.Add("6. Bending Machine 1000 Ton: " + Bending10 + " mesin");
+            Fasilitas.Items.Add("7. Frame Bender: " + Bender + " mesin");
+            Fasilitas.Items.Add("8. CNC Cutting (Plasma): " + CNC + " mesin");
+            Fasilitas.Items.Add("9. Cutting Machine (Semi Automatic): " + CuttingAuto + " mesin");
+            Fasilitas.Items.Add("10. Bending Roll Machine 1500 Ton: " + BendRoll + " mesin");
+            Fasilitas.Items.Add("11. Bending Machine 500 Ton: " + Bending5 + " mesin");
+            Fasilitas.Items.Add("12. Welding Machine FCAW (Semi Automatic): " + Welding + " mesin");
+            Fasilitas.Items.Add("13. Mobile Web Gantry: " + Gantry + " mesin");
+            Fasilitas.Items.Add("14. Service Welding Gantry: " + ServiceWeld + " mesin");
+            Fasilitas.Items.Add("15. Mobile Stiffener Gantry: " + Stiffener + " mesin");
+            Fasilitas.Items.Add("16. Transfer Trolley: " + Trolley + " mesin");
+            Fasilitas.Items.Add("17. Fillet Welding Gantry: " + FilletWeld + " mesin");
+            Fasilitas.Items.Add("18. NC Pipe Bender: " + NCPip + " mesin");
+            Fasilitas.Items.Add("19. Semi Auto Gas Cutting: " + SemiAuto + " mesin");
+            Fasilitas.Items.Add("20. Pipe Bender 50 A: " + PipeBend + " mesin");
+            Fasilitas.Items.Add("21. Pipe Bender 65 A: " + PipeBend65 + " mesin");
+            Fasilitas.Items.Add("22. Auto Gas Cutting Machine: " + AutoGasCutt + " mesin");
             Fasilitas.Items.Add("Fasilitas Pendukung:");
-            Fasilitas.Items.Add("Gantry Crane: " + GCrane + " mesin");
-            Fasilitas.Items.Add("Over Head Crane 10 Ton: " + OHC10 + " mesin");
-            Fasilitas.Items.Add("Transporter 300 Ton: " + T30 + " mesin");
-            Fasilitas.Items.Add("Transporter 150 TOn: " + T15 + " mesin");
-            Fasilitas.Items.Add("Over Head Crane 5 Ton: " + OHC5 + " mesin");
+            Fasilitas.Items.Add("1. Gantry Crane: " + GCrane + " mesin");
+            Fasilitas.Items.Add("2. Over Head Crane 10 Ton: " + OHC10 + " mesin");
+            Fasilitas.Items.Add("3. Transporter 300 Ton: " + T30 + " mesin");
+            Fasilitas.Items.Add("4. Transporter 150 TOn: " + T15 + " mesin");
+            Fasilitas.Items.Add("5. Over Head Crane 5 Ton: " + OHC5 + " mesin");
             Fasilitas.Items.Add("");
         }
 
@@ -263,7 +263,7 @@ namespace KalibrasiKapalDev
             Fasil.KecMesin = 2.10;
             Fasil.WaktuKerja = 2;
             Fasil.BebanKerja = 7;
-            if (Fasil.setPlateStr() < 0.9)
+            if (Fasil.setPlateStr() < 1.4)
             {
                 Plate = "1";
             }
@@ -277,7 +277,7 @@ namespace KalibrasiKapalDev
             Fasil.KecMesin = 2.10;
             Fasil.WaktuKerja = 2;
             Fasil.BebanKerja = 6;
-            if (Fasil.setPlateStr() < 0.9)
+            if (Fasil.setPlateStr() < 1.4)
             {
                 Conveyor = "1";
             }
@@ -291,7 +291,7 @@ namespace KalibrasiKapalDev
             Fasil.KecMesin = 1.25;
             Fasil.WaktuKerja = 2;
             Fasil.BebanKerja = 6;
-            if (Fasil.setPlateStr() < 0.9)
+            if (Fasil.setPlateStr() < 1.4)
             {
                 Blasting = "1";
             }
@@ -305,7 +305,7 @@ namespace KalibrasiKapalDev
             Fasil.KecMesin = 1.25;
             Fasil.WaktuKerja = 2;
             Fasil.BebanKerja = 6;
-            if (Fasil.setPlateStr() < 0.9)
+            if (Fasil.setPlateStr() < 1.4)
             {
                 Primering = "1";
             }
@@ -319,7 +319,7 @@ namespace KalibrasiKapalDev
             Fasil.WaktuKerja = 3;
             Fasil.BebanKerja = 5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setCuttMachine() < 0.9)
+            if (Fasil.setCuttMachine() < 1.4)
             {
                 Cutting = "1";
             }
@@ -334,7 +334,7 @@ namespace KalibrasiKapalDev
             Fasil.WaktuKerja = 3;
             Fasil.BebanKerja = 6;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setBendingMachine() < 0.9)
+            if (Fasil.setBendingMachine() < 1.4)
             {
                 Bending10 = "1";
             }
@@ -348,7 +348,7 @@ namespace KalibrasiKapalDev
             Fasil.WaktuKerja = 3;
             Fasil.BebanKerja = 6;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setCuttMachine() < 0.9)
+            if (Fasil.setCuttMachine() < 1.4)
             {
                 Bender = "1";
             }
@@ -362,7 +362,7 @@ namespace KalibrasiKapalDev
             Fasil.KapaMesin = 10;
             Fasil.WaktuKerja = 3;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setCNCMachine() < 0.9)
+            if (Fasil.setCNCMachine() < 1.4)
             {
                 CNC = "1";
             }
@@ -376,7 +376,7 @@ namespace KalibrasiKapalDev
             Fasil.KapaMesin = 5;
             Fasil.WaktuKerja = 3;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setCuttMachineAuto() < 0.9)
+            if (Fasil.setCuttMachineAuto() < 1.4)
             {
                 CuttingAuto = "1";
             }
@@ -390,13 +390,13 @@ namespace KalibrasiKapalDev
             Fasil.KapaMesin = 15;
             Fasil.WaktuKerja = 3;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setCNCMachine() < 0.9)
+            if (Fasil.setBendRollMachine() < 1.4)
             {
                 BendRoll = "1";
             }
             else
             {
-                BendRoll = Math.Round(Convert.ToDecimal(Fasil.setCNCMachine())).ToString();
+                BendRoll = Math.Round(Convert.ToDecimal(Fasil.setBendRollMachine())).ToString();
             }
         }
         private void BendingMachine5()
@@ -404,7 +404,7 @@ namespace KalibrasiKapalDev
             Fasil.KapaMesin = 4;
             Fasil.WaktuKerja = 3;
             Fasil.BebanKerja = 6;
-            if (Fasil.setPlateStr() < 0.9)
+            if (Fasil.setPlateStr() < 1.4)
             {
                 Bending5 = "1";
             }
@@ -419,7 +419,7 @@ namespace KalibrasiKapalDev
             Fasil.WaktuKerja = 3;
             Fasil.BebanKerja = 6;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setWeldingMachine() < 0.9)
+            if (Fasil.setWeldingMachine() < 1.4)
             {
                 Welding = "1";
             }
@@ -434,7 +434,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 7;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setPlateStr() < 0.9)
+            if (Fasil.setPlateStr() < 1.4)
             {
                 Gantry = "1";
             }
@@ -449,7 +449,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 5;
             Fasil.BeratBaja = Wst;
             Fasil.KapaBebanMesin = 0.5;
-            if (Fasil.setPlateStr() < 0.9)
+            if (Fasil.setPlateStr() < 1.4)
             {
                 ServiceWeld = "1";
             }
@@ -464,7 +464,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 6;
             Fasil.BeratBaja = Wst;
             Fasil.KapaBebanMesin = 0.38;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 Stiffener = "1";
             }
@@ -479,7 +479,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 5;
             Fasil.KapaBebanMesin = 5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 Trolley = "1";
             }
@@ -494,7 +494,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 5;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 FilletWeld = "1";
             }
@@ -509,7 +509,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 5;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 NCPip = "1";
             }
@@ -524,7 +524,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 8;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 SemiAuto = "1";
             }
@@ -539,7 +539,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 7;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 PipeBend = "1";
             }
@@ -554,7 +554,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 5;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 PipeBend65 = "1";
             }
@@ -569,7 +569,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 8;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 AutoGasCutt = "1";
             }
@@ -585,7 +585,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 7;
             Fasil.KapaBebanMesin = 10;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 GCrane = "1";
             }
@@ -600,7 +600,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 7;
             Fasil.KapaBebanMesin = 10;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 OHC10 = "1";
             }
@@ -615,7 +615,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 6;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 T30 = "1";
             }
@@ -630,7 +630,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 7;
             Fasil.KapaBebanMesin = 0.5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 T15 = "1";
             }
@@ -645,7 +645,7 @@ namespace KalibrasiKapalDev
             Fasil.BebanKerja = 5;
             Fasil.KapaBebanMesin = 5;
             Fasil.BeratBaja = Wst;
-            if (Fasil.setMobileWeb() < 0.9)
+            if (Fasil.setMobileWeb() < 1.4)
             {
                 OHC5 = "1";
             }

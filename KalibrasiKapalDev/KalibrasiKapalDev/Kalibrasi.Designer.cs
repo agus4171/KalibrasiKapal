@@ -368,6 +368,7 @@
             // 
             this.BeratBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BeratBaja.FormattingEnabled = true;
+            this.BeratBaja.HorizontalScrollbar = true;
             this.BeratBaja.ItemHeight = 15;
             this.BeratBaja.Location = new System.Drawing.Point(12, 324);
             this.BeratBaja.Name = "BeratBaja";
@@ -378,6 +379,7 @@
             // 
             this.Pekerja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pekerja.FormattingEnabled = true;
+            this.Pekerja.HorizontalScrollbar = true;
             this.Pekerja.ItemHeight = 15;
             this.Pekerja.Location = new System.Drawing.Point(513, 324);
             this.Pekerja.Name = "Pekerja";
@@ -398,6 +400,7 @@
             // 
             this.Fasilitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fasilitas.FormattingEnabled = true;
+            this.Fasilitas.HorizontalScrollbar = true;
             this.Fasilitas.ItemHeight = 15;
             this.Fasilitas.Location = new System.Drawing.Point(243, 324);
             this.Fasilitas.Name = "Fasilitas";

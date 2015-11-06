@@ -161,12 +161,12 @@ namespace KalibrasiKapalDev
 
         public double setBendingMachine()
         {
-            return BeratBaja / (BajaHariLbr * (BebanKerja / 60) * 0.8) / WaktuKerja;
+            return ((BeratBaja / (BajaHariLbr * (BebanKerja / 60)) * 0.8)) / WaktuKerja;
         }
 
         public double setCNCMachine()
         {
-            return BeratBaja / WaktuKerja * 0.8 / BajaHariLbr;
+            return (BeratBaja / WaktuKerja / BajaHariLbr) * KapaMesin / WaktuKerja * 0.8;
         }
 
         public double setCuttMachineAuto()
@@ -176,11 +176,11 @@ namespace KalibrasiKapalDev
 
         public double setBendRollMachine()
         {
-            return (BeratBaja / WaktuKerja * 0.8) / (KapaMesin * BeratBajaLbr);
+            return (BeratBaja / (BajaHariD * WaktuKerja * KapaMesin)) * 0.8;
         }
         public double setWeldingMachine()
         {
-            return WaktuKerja * BebanKerja * 0.8 / (BajaHariD * KecMesin * 60);
+            return BajaHariD * 12 * 0.243 * 12 / (5 * BebanKerja * KecMesin * 0.8);
         }
         public double setMobileWeb()
         {
