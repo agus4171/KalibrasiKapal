@@ -40,7 +40,9 @@
                     <Label x:Name="label9" Content="Jenis Kapal" HorizontalAlignment="Left" Margin="437,30,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <ComboBox x:Name="typeKapalInp" HorizontalAlignment="Left" Margin="562,34,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="typeKapalInp_SelectionChanged"/>
                     <Button x:Name="button" Content="Calculate" HorizontalAlignment="Left" Margin="562,196,0,0" VerticalAlignment="Top" Width="120" Click="button_Click_1" Height="25" FontWeight="Bold" FontSize="13.333" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-                    <ListBox x:Name="listBox" HorizontalAlignment="Left" Margin="50,299,0,10" Width="690" SelectionChanged="listBox_SelectionChanged"/>
+                    <ListBox x:Name="listBox" HorizontalAlignment="Left" Margin="50,299,0,10" Width="205" SelectionChanged="listBox_SelectionChanged"/>
+                    <ListBox x:Name="listBox_Copy" HorizontalAlignment="Left" Margin="270,299,0,10" Width="205" SelectionChanged="listBox_SelectionChanged"/>
+                    <ListBox x:Name="listBox_Copy1" HorizontalAlignment="Left" Margin="503,299,0,10" Width="205" SelectionChanged="listBox_SelectionChanged"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Berat Baja" Width="70" Margin="0,-2,0,2" Height="22">
@@ -48,76 +50,91 @@
             </TabItem>
             <TabItem Header="Fasilitas Utama" HorizontalAlignment="Left" Width="100" Margin="-2,-2,-28,2">
                 <Grid Background="#FFE5E5E5">
-                    <Label x:Name="label10" Content="Plate Straightening Roller" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label10_Copy" Content="CNC Cutting (Plasma)" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label10_Copy1" Content="Frame Bender" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label10_Copy2" Content="Bending Machine 1000 Ton" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label10_Copy3" Content="Primering Machine" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label10_Copy4" Content="Shot Blasting" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label10_Copy5" Content="Cutting Machine (NC SAFRO)" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label10_Copy6" Content="Roller Conveyor" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11" Content="Cutting Machine (Semi Automatic)" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy" Content="NC Pipe Bender" HorizontalAlignment="Left" Margin="394,263,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy1" Content="Transfer Trolley" HorizontalAlignment="Left" Margin="394,183,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy2" Content="Mobile Stiffener Gantry" HorizontalAlignment="Left" Margin="394,143,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy3" Content="Service Welding Gantry" HorizontalAlignment="Left" Margin="394,103,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy4" Content="Mobile Web gantry" HorizontalAlignment="Left" Margin="394,60,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy5" Content="Welding Machine FCAW (Semi Automatic)" HorizontalAlignment="Left" Margin="394,20,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy6" Content="Bending Machine 500 Ton" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy7" Content="Bending Roll Machine 1500 Ton" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy8" Content="Pipe Bender 65 A" HorizontalAlignment="Left" Margin="394,380,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy9" Content="Pipe Bender 50 A" HorizontalAlignment="Left" Margin="394,340,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy10" Content="Fillet Welding Gantry" HorizontalAlignment="Left" Margin="394,220,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label11_Copy11" Content="Semi Auto Gas Cutting" HorizontalAlignment="Left" Margin="394,300,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="label12" Content="Auto Gas Cutting Machine" HorizontalAlignment="Left" Margin="394,423,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="plateStr" HorizontalAlignment="Left" Height="23" Margin="248,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="rollerCon" HorizontalAlignment="Left" Height="23" Margin="248,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="shotBlas" HorizontalAlignment="Left" Height="23" Margin="248,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="primeMachine" HorizontalAlignment="Left" Height="23" Margin="248,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="cuttMachine" HorizontalAlignment="Left" Height="23" Margin="248,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="bendMachine" HorizontalAlignment="Left" Height="23" Margin="248,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="frameBend" HorizontalAlignment="Left" Height="23" Margin="248,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="cncCutt" HorizontalAlignment="Left" Height="23" Margin="248,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <Label x:Name="label10" Content="Plate Straightening Roller" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label10_Copy" Content="CNC Cutting (Plasma)" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label10_Copy1" Content="Frame Bender" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label10_Copy2" Content="Bending Machine 1000 Ton" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label10_Copy3" Content="Primering Machine" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label10_Copy4" Content="Shot Blasting" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label10_Copy5" Content="Cutting Machine (NC SAFRO)" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label10_Copy6" Content="Roller Conveyor" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11" Content="Cutting Machine (Semi Automatic)" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy" Content="NC Pipe Bender" HorizontalAlignment="Left" Margin="394,263,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy1" Content="Transfer Trolley" HorizontalAlignment="Left" Margin="394,183,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy2" Content="Mobile Stiffener Gantry" HorizontalAlignment="Left" Margin="394,143,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy3" Content="Service Welding Gantry" HorizontalAlignment="Left" Margin="394,103,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy4" Content="Mobile Web gantry" HorizontalAlignment="Left" Margin="394,60,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy5" Content="Welding Machine FCAW (Semi Automatic)" HorizontalAlignment="Left" Margin="394,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy6" Content="Bending Machine 500 Ton" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy7" Content="Bending Roll Machine 1500 Ton" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy8" Content="Pipe Bender 65 A" HorizontalAlignment="Left" Margin="394,380,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy9" Content="Pipe Bender 50 A" HorizontalAlignment="Left" Margin="394,340,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy10" Content="Fillet Welding Gantry" HorizontalAlignment="Left" Margin="394,220,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label11_Copy11" Content="Semi Auto Gas Cutting" HorizontalAlignment="Left" Margin="394,300,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label12" Content="Auto Gas Cutting Machine" HorizontalAlignment="Left" Margin="394,423,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBox x:Name="PlateStr" HorizontalAlignment="Left" Height="23" Margin="248,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="RollerCon" HorizontalAlignment="Left" Height="23" Margin="248,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="ShotBlas" HorizontalAlignment="Left" Height="23" Margin="248,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="PrimeMachine" HorizontalAlignment="Left" Height="23" Margin="248,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="CuttMachine" HorizontalAlignment="Left" Height="23" Margin="248,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="BendMachine" HorizontalAlignment="Left" Height="23" Margin="248,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="FrameBend" HorizontalAlignment="Left" Height="23" Margin="248,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="CncCutt" HorizontalAlignment="Left" Height="23" Margin="248,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
                     <TextBox x:Name="CuttMachineAuto" HorizontalAlignment="Left" Height="23" Margin="248,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="bendRoll" HorizontalAlignment="Left" Height="23" Margin="248,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="bendMachine500" HorizontalAlignment="Left" Height="23" Margin="248,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
-                    <TextBox x:Name="weldMachine" HorizontalAlignment="Left" Height="23" Margin="659,24,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="mobileWeb" HorizontalAlignment="Left" Height="23" Margin="659,63,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="serviceWeld" HorizontalAlignment="Left" Height="23" Margin="659,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="mobileStiff" HorizontalAlignment="Left" Height="23" Margin="659,143,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="transferTroll" HorizontalAlignment="Left" Height="23" Margin="659,183,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="FilletWeld" HorizontalAlignment="Left" Height="23" Margin="659,223,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="ncPipe" HorizontalAlignment="Left" Height="23" Margin="659,263,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="semiAuto" HorizontalAlignment="Left" Height="23" Margin="659,300,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="pipeBend50" HorizontalAlignment="Left" Height="23" Margin="659,343,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="pipeBend60" HorizontalAlignment="Left" Height="23" Margin="659,383,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="autoGas" HorizontalAlignment="Left" Height="23" Margin="659,423,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="218,25,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="218,185,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="218,145,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="218,105,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="218,65,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="218,345,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy5" HorizontalAlignment="Left" Margin="218,305,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy6" HorizontalAlignment="Left" Margin="218,385,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy7" HorizontalAlignment="Left" Margin="218,425,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Margin="218,265,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy9" HorizontalAlignment="Left" Margin="218,225,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy10" HorizontalAlignment="Left" Margin="635,25,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy11" HorizontalAlignment="Left" Margin="635,185,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy12" HorizontalAlignment="Left" Margin="635,145,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy13" HorizontalAlignment="Left" Margin="635,105,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy14" HorizontalAlignment="Left" Margin="635,65,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy15" HorizontalAlignment="Left" Margin="635,305,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy16" HorizontalAlignment="Left" Margin="635,385,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy17" HorizontalAlignment="Left" Margin="635,425,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy18" HorizontalAlignment="Left" Margin="635,265,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy19" HorizontalAlignment="Left" Margin="635,225,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="textBlock1_Copy20" HorizontalAlignment="Left" Margin="635,345,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+                    <TextBox x:Name="BendRoll" HorizontalAlignment="Left" Height="23" Margin="248,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="BendMachine500" HorizontalAlignment="Left" Height="23" Margin="248,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="WeldMachine" HorizontalAlignment="Left" Height="23" Margin="680,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="MobileWeb" HorizontalAlignment="Left" Height="23" Margin="680,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="ServiceWeld" HorizontalAlignment="Left" Height="23" Margin="680,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="MobileStiff" HorizontalAlignment="Left" Height="23" Margin="680,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="TransferTroll" HorizontalAlignment="Left" Height="23" Margin="680,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="FilletWeld" HorizontalAlignment="Left" Height="23" Margin="680,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="NcPipe" HorizontalAlignment="Left" Height="23" Margin="680,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="SemiAuto" HorizontalAlignment="Left" Height="23" Margin="680,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="PipeBend50" HorizontalAlignment="Left" Height="23" Margin="680,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="PipeBend65" HorizontalAlignment="Left" Height="23" Margin="680,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBox x:Name="AutoGas" HorizontalAlignment="Left" Height="23" Margin="680,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="218,25,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="218,185,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="218,145,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="218,105,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="218,65,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="218,345,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy5" HorizontalAlignment="Left" Margin="218,305,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy6" HorizontalAlignment="Left" Margin="218,385,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy7" HorizontalAlignment="Left" Margin="218,425,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Margin="218,265,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy9" HorizontalAlignment="Left" Margin="218,225,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy10" HorizontalAlignment="Left" Margin="660,25,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy11" HorizontalAlignment="Left" Margin="660,185,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy12" HorizontalAlignment="Left" Margin="660,145,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy13" HorizontalAlignment="Left" Margin="660,105,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy14" HorizontalAlignment="Left" Margin="660,65,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy15" HorizontalAlignment="Left" Margin="660,305,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy16" HorizontalAlignment="Left" Margin="660,385,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy17" HorizontalAlignment="Left" Margin="660,425,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy18" HorizontalAlignment="Left" Margin="660,265,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy19" HorizontalAlignment="Left" Margin="660,225,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock1_Copy20" HorizontalAlignment="Left" Margin="660,345,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="318,25,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" Margin="318,344,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="318,305,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy2" HorizontalAlignment="Left" Margin="318,268,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy3" HorizontalAlignment="Left" Margin="318,227,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy4" HorizontalAlignment="Left" Margin="318,184,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy5" HorizontalAlignment="Left" Margin="318,147,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy6" HorizontalAlignment="Left" Margin="741,65,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Margin="741,25,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy8" HorizontalAlignment="Left" Margin="318,107,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
+                    <TextBlock x:Name="textBlock2_Copy9" HorizontalAlignment="Left" Margin="318,67,0,0" TextWrapping="Wrap" Text="mesin" VerticalAlignment="Top" FontSize="13.333"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Fasilitas Pendukung" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="120" Margin="-2,-2,-24,0">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
             </TabItem>
         </TabControl>
 

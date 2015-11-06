@@ -19,23 +19,37 @@ namespace KalibrasiKapalDev
         }
 
         private List<TypeKapal> List = new List<TypeKapal>();
-        Fasilitas FasilUtama = new Fasilitas();
+        //private List<Kapal> Kapal = new List<Kapal>();
+        Fasilitas Fasil = new Fasilitas();
         Kapal KapalBaru = new Kapal();
-        private double Lwl;
-        private double Fn;
-        private double Cb;
-        private double V;
-        private double D;
-        private double Vforcastle;
-        private double Vpoop;
-        private double Vtotal;
-        private double Vdh_ll;
-        private double Vdh_lll;
-        private double Vdh_lV;
-        private double Vwh;
-        private double Vdh;
-        private double Cs;
-        private double U;
+        private string Plate;
+        private string Conveyor;
+        private string Blasting;
+        private string Primering;
+        private string Cutting;
+        private string Bending10;
+        private string Bender;
+        private string CNC;
+        private string CuttingAuto;
+        private string BendRoll;
+        private string Bending5;
+        private string Welding;
+        private string Gantry;
+        private string ServiceWeld;
+        private string Stiffener;
+        private string Trolley;
+        private string FilletWeld;
+        private string NCPip;
+        private string SemiAuto;
+        private string PipeBend;
+        private string PipeBend65;
+        private string AutoGasCutt;
+        private string GCrane;
+        private string OHC10;
+        private string T30;
+        private string T15;
+        private string OHC5;
+
         private double Wst;
         private double Cso;
 
@@ -61,8 +75,105 @@ namespace KalibrasiKapalDev
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void HitungKapal()
         {
+            BeratBaja.Items.Add("Nama Kapal: " + KapalBaru.Nama);
+            BeratBaja.Items.Add("Froude Number: " + KapalBaru.setFn().ToString("0.###") +"");
+            BeratBaja.Items.Add("Panjang Garis Air: " + KapalBaru.setLwl().ToString("0.###") +" m");
+            BeratBaja.Items.Add("Volume Displasemen: " + KapalBaru.setV().ToString("0.###") +" m^3");
+            BeratBaja.Items.Add("Displasemen: " + KapalBaru.setD().ToString("0.###") +" ton");
+            BeratBaja.Items.Add("Coeffisien Block: " + KapalBaru.setCb().ToString("0.###") +"");
+            BeratBaja.Items.Add("Volume Forecastle: " + KapalBaru.setVForcastle().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("Volume Poop: " + KapalBaru.setVPoop().ToString("0.###") +" m^3");
+            BeratBaja.Items.Add("Volume Total(Va): " + KapalBaru.setVTotal().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("Volume Layer II: " + KapalBaru.setVDH_ll().ToString("0.###") +" m^3");
+            BeratBaja.Items.Add("Volume Layer III: " + KapalBaru.setVDH_lll().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("Volume Layer IV: " + KapalBaru.setVDH_lV().ToString("0.###") +" m^3");
+            BeratBaja.Items.Add("Volume Wheel House: " + KapalBaru.setVWH().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("Volume Total(Vdh): " + KapalBaru.setVDH().ToString("0.###") + " m^3");
+            BeratBaja.Items.Add("Tinggi Kapal(Da): " + KapalBaru.setD().ToString("0.###") + " m");
+            BeratBaja.Items.Add("U: " + KapalBaru.setU().ToString("0.###") + "");
+            BeratBaja.Items.Add("Cs: " + KapalBaru.setCs().ToString("0.###") + "");
+            BeratBaja.Items.Add("Berat Baja Total: " + KapalBaru.setWst().ToString("0.###") + " ton");
+            BeratBaja.Items.Add("");
+        }
+
+        private void HitungFasilitas()
+        {
+            Fasilitas.Items.Add("Nama Kapal: " + KapalBaru.Nama);
+            Fasilitas.Items.Add("Fasilitas Utama:");
+            Fasilitas.Items.Add("Plate Straightening Roller: " + Plate + " mesin");
+            Fasilitas.Items.Add("Roller Conveyor: " + Conveyor + " mesin");
+            Fasilitas.Items.Add("Shot Blasting: " + Blasting + " mesin");
+            Fasilitas.Items.Add("Primering Machine: " + Primering+ " mesin");
+            Fasilitas.Items.Add("Cutting Machine (NC SAFRO): " + Cutting + " mesin");
+            Fasilitas.Items.Add("Bending Machine 1000 Ton: " + Bending10 + " mesin");
+            Fasilitas.Items.Add("Frame Bender: " + Bender + " mesin");
+            Fasilitas.Items.Add("CNC Cutting (Plasma): " + CNC + " mesin");
+            Fasilitas.Items.Add("Cutting Machine (Semi Automatic): " + CuttingAuto + " mesin");
+            Fasilitas.Items.Add("Bending Roll Machine 1500 Ton: " + BendRoll + " mesin");
+            Fasilitas.Items.Add("Bending Machine 500 Ton: " + Bending5 + " mesin");
+            Fasilitas.Items.Add("Welding Machine FCAW (Semi Automatic): " + Welding + " mesin");
+            Fasilitas.Items.Add("Mobile Web Gantry: " + Gantry + " mesin");
+            Fasilitas.Items.Add("Service Welding Gantry: " + ServiceWeld + " mesin");
+            Fasilitas.Items.Add("Mobile Stiffener Gantry: " + Stiffener + " mesin");
+            Fasilitas.Items.Add("Transfer Trolley: " + Trolley + " mesin");
+            Fasilitas.Items.Add("Fillet Welding Gantry: " + FilletWeld + " mesin");
+            Fasilitas.Items.Add("NC Pipe Bender: " + NCPip + " mesin");
+            Fasilitas.Items.Add("Semi Auto Gas Cutting: " + SemiAuto + " mesin");
+            Fasilitas.Items.Add("Pipe Bender 50 A: " + PipeBend + " mesin");
+            Fasilitas.Items.Add("Pipe Bender 65 A: " + PipeBend65 + " mesin");
+            Fasilitas.Items.Add("Auto Gas Cutting Machine: " + AutoGasCutt + " mesin");
+            Fasilitas.Items.Add("Fasilitas Pendukung:");
+            Fasilitas.Items.Add("Gantry Crane: " + GCrane + " mesin");
+            Fasilitas.Items.Add("Over Head Crane 10 Ton: " + OHC10 + " mesin");
+            Fasilitas.Items.Add("Transporter 300 Ton: " + T30 + " mesin");
+            Fasilitas.Items.Add("Transporter 150 TOn: " + T15 + " mesin");
+            Fasilitas.Items.Add("Over Head Crane 5 Ton: " + OHC5 + " mesin");
+            Fasilitas.Items.Add("");
+        }
+
+        private void HitungPekerja()
+        {
+            Pekerja.Items.Add("Nama Kapal: " + KapalBaru.Nama);
+            Pekerja.Items.Add("Fasilitas Utama:");
+            Pekerja.Items.Add("Plate Straightening Roller: " + 0 + " orang");
+            Pekerja.Items.Add("Roller Conveyor: " + 0 + " orang");
+            Pekerja.Items.Add("Shot Blasting: " + 0 + " orang");
+            Pekerja.Items.Add("Primering Machine: " + 0+ " orang");
+            Pekerja.Items.Add("Cutting Machine (NC SAFRO): " + 0 + " orang");
+            Pekerja.Items.Add("Bending Machine 1000 Ton: " + 0 + " orang");
+            Pekerja.Items.Add("Frame Bender: " + 0 + " orang");
+            Pekerja.Items.Add("CNC Cutting (Plasma): " + 0 + " orang");
+            Pekerja.Items.Add("Cutting Machine (Semi Automatic): " + 0 + " orang");
+            Pekerja.Items.Add("Bending Roll Machine 1500 Ton: " + 0 + " orang");
+            Pekerja.Items.Add("Bending Machine 500 Ton: " + 0 + " orang");
+            Pekerja.Items.Add("Welding Machine FCAW (Semi Automatic): " + 0 + " orang");
+            Pekerja.Items.Add("Mobile Web Gantry: " + 0 + " orang");
+            Pekerja.Items.Add("Service Welding Gantry: " + 0 + " orang");
+            Pekerja.Items.Add("Mobile Stiffener Gantry: " + 0 + " orang");
+            Pekerja.Items.Add("Transfer Trolley: " + 0 + " orang");
+            Pekerja.Items.Add("Fillet Welding Gantry: " + 0 + " orang");
+            Pekerja.Items.Add("NC Pipe Bender: " + 0 + " orang");
+            Pekerja.Items.Add("Semi Auto Gas Cutting: " + 0 + " orang");
+            Pekerja.Items.Add("Pipe Bender 50 A: " + 0 + " orang");
+            Pekerja.Items.Add("Pipe Bender 65 A: " + 0 + " orang");
+            Pekerja.Items.Add("Auto Gas Cutting Machine: " + 0 + " orang");
+            Pekerja.Items.Add("Fasilitas Pendukung:");
+            Pekerja.Items.Add("Gantry Crane: " + 0 + " orang");
+            Pekerja.Items.Add("Over Head Crane 10 Ton: " + 0 + " orang");
+            Pekerja.Items.Add("Transporter 300 Ton: " + 0 + " orang");
+            Pekerja.Items.Add("Transporter 150 TOn: " + 0 + " orang");
+            Pekerja.Items.Add("Over Head Crane 5 Ton: " + 0 + " orang");
+            Pekerja.Items.Add("");
+        }
+
+        private void Hitung_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(Nama.Text))
+            {
+                KapalBaru.Nama = Nama.Text;
+            }
             if (!string.IsNullOrWhiteSpace(Loa.Text))
             {
                 KapalBaru.Loa = double.Parse(Loa.Text);
@@ -91,42 +202,35 @@ namespace KalibrasiKapalDev
             {
                 KapalBaru.Dwt = double.Parse(Dwt.Text);
             }
+            if (!string.IsNullOrWhiteSpace(Jumlah.Text))
+            {
+                KapalBaru.Jumlah = int.Parse(Jumlah.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(Muatan.Text))
+            {
+                KapalBaru.Muatan = Muatan.Text;
+            }
             if (!string.IsNullOrWhiteSpace(Jenis.Text))
             {
                 KapalBaru.Jenis = Cso;
             }
-
-            Lwl = KapalBaru.setLwl();
-            Fn = KapalBaru.setFn();
-            Cb = KapalBaru.setCb();
-            V = KapalBaru.setV();
-            D = KapalBaru.setD();
-            Vforcastle = KapalBaru.setVForcastle();
-            Vpoop = KapalBaru.setVPoop();
-            Vtotal = KapalBaru.setVTotal();
-            Vdh_ll = KapalBaru.setVDH_ll();
-            Vdh_lll = KapalBaru.setVDH_lll();
-            Vdh_lV = KapalBaru.setVDH_lV();
-            Vwh = KapalBaru.setVWH();
-            Vdh = KapalBaru.setVDH();
-            Cs = KapalBaru.setCs();
             Wst = KapalBaru.setWst();
-            U = KapalBaru.setU();
-
-            /*PlateStraightening();
+            //beratBaja
+            HitungKapal();
+            //fasilitas utama
+            PlateStraightening();
             RollerConveyor();
             ShotBlasting();
             PrimeringMachine();
             CuttingMachine();
-
+            BendingMachine10();
             FrameBender();
             CNCCutting();
             CuttingMachineAuto();
             BendRollMachine();
-
+            BendingMachine5();
             WeldingMachine();
             MobileWebGantry();
-
             ServiceWelding();
             MobileStiffener();
             TransferTrolley();
@@ -135,7 +239,16 @@ namespace KalibrasiKapalDev
             SemiAutoGas();
             PipeBender();
             PipeBender65();
-            AutoGasCutting();*/
+            AutoGasCutting();
+            //fasilitas tambahan
+            GantryCrane();
+            OverHeadCrane10();
+            Transporter30();
+            Transporter15();
+            OverHeadCrane5();
+            //fasilitas      
+            HitungFasilitas();
+            HitungPekerja();         
         }
 
         private void Jenis_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,326 +258,401 @@ namespace KalibrasiKapalDev
             Cso = Kapal.Cso;
         }
 
-        /*private void PlateStraightening()
+        private void PlateStraightening()
         {
-            FasilUtama.KecMesin = 2.10;
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 7;
-            if (FasilUtama.setPlateStr() < 0.9)
+            Fasil.KecMesin = 2.10;
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 7;
+            if (Fasil.setPlateStr() < 0.9)
             {
-                PlateStr.Text = "1";
+                Plate = "1";
             }
             else
             {
-                PlateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+                Plate = Math.Round(Convert.ToDecimal(Fasil.setPlateStr())).ToString();
             }
         }
         private void RollerConveyor()
         {
-            FasilUtama.KecMesin = 2.10;
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 6;
-            if (FasilUtama.setPlateStr() < 0.9)
+            Fasil.KecMesin = 2.10;
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 6;
+            if (Fasil.setPlateStr() < 0.9)
             {
-                RollerCon.Text = "1";
+                Conveyor = "1";
             }
             else
             {
-                RollerCon.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+                Conveyor = Math.Round(Convert.ToDecimal(Fasil.setPlateStr())).ToString();
             }
         }
         private void ShotBlasting()
         {
-            FasilUtama.KecMesin = 1.25;
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 6;
-            if (FasilUtama.setPlateStr() < 0.9)
+            Fasil.KecMesin = 1.25;
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 6;
+            if (Fasil.setPlateStr() < 0.9)
             {
-                ShotBlas.Text = "1";
+                Blasting = "1";
             }
             else
             {
-                ShotBlas.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+                Blasting = Math.Round(Convert.ToDecimal(Fasil.setPlateStr())).ToString();
             }
         }
         private void PrimeringMachine()
         {
-            FasilUtama.KecMesin = 1.25;
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 6;
-            if (FasilUtama.setPlateStr() < 0.9)
+            Fasil.KecMesin = 1.25;
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 6;
+            if (Fasil.setPlateStr() < 0.9)
             {
-                PrimeMachine.Text = "1";
+                Primering = "1";
             }
             else
             {
-                PrimeMachine.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+                Primering = Math.Round(Convert.ToDecimal(Fasil.setPlateStr())).ToString();
             }
         }
         private void CuttingMachine()
         {
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.BebanKerja = 5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setCuttMachine() < 0.9)
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setCuttMachine() < 0.9)
             {
-                CuttMachine.Text = "1";
+                Cutting = "1";
             }
             else
             {
-                CuttMachine.Text = Math.Round(Convert.ToDecimal(FasilUtama.setCuttMachine())).ToString();
+                Cutting = Math.Round(Convert.ToDecimal(Fasil.setCuttMachine())).ToString();
             }
         }
-        private void rollerConveyor()
+        private void BendingMachine10()
         {
-            Fasilitas FasilUtama = new Fasilitas();
-            FasilUtama.KecMesin = 2.10;
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 6;
-            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            Fasil.KapaMesin = 4;
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 6;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setBendingMachine() < 0.9)
             {
-                plateStr.Text = "1";
+                Bending10 = "1";
             }
             else
             {
-                plateStr.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+                Bending10 = Math.Round(Convert.ToDecimal(Fasil.setBendingMachine())).ToString();
             }
         }
         private void FrameBender()
         {
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.BebanKerja = 6;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setCuttMachine() < 0.9)
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 6;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setCuttMachine() < 0.9)
             {
-                FrameBend.Text = "1";
+                Bender = "1";
             }
             else
             {
-                FrameBend.Text = Math.Round(Convert.ToDecimal(FasilUtama.setCuttMachine())).ToString();
+                Bender = Math.Round(Convert.ToDecimal(Fasil.setCuttMachine())).ToString();
             }
         }
         private void CNCCutting()
         {
-            FasilUtama.KapaMesin = 10;
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setCNCMachine() < 0.9)
+            Fasil.KapaMesin = 10;
+            Fasil.WaktuKerja = 3;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setCNCMachine() < 0.9)
             {
-                CncCutt.Text = "1";
+                CNC = "1";
             }
             else
             {
-                CncCutt.Text = Math.Round(FasilUtama.setCNCMachine()).ToString();
+                CNC = Math.Round(Convert.ToDecimal(Fasil.setCNCMachine())).ToString();
             }
         }
         private void CuttingMachineAuto()
         {
-            FasilUtama.KapaMesin = 4;
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setCuttMachineAuto() < 0.9)
+            Fasil.KapaMesin = 5;
+            Fasil.WaktuKerja = 3;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setCuttMachineAuto() < 0.9)
             {
-                CuttMachineAuto.Text = "1";
+                CuttingAuto = "1";
             }
             else
             {
-                CuttMachineAuto.Text = Math.Round(Convert.ToDecimal(FasilUtama.setCuttMachineAuto())).ToString();
+                CuttingAuto = Math.Round(Convert.ToDecimal(Fasil.setCuttMachineAuto())).ToString();
             }
         }
         private void BendRollMachine()
         {
-            FasilUtama.KapaMesin = 15;
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setCNCMachine() < 0.9)
+            Fasil.KapaMesin = 15;
+            Fasil.WaktuKerja = 3;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setCNCMachine() < 0.9)
             {
-                BendRoll.Text = "1";
+                BendRoll = "1";
             }
             else
             {
-                BendRoll.Text = Math.Round(Convert.ToDecimal(FasilUtama.setCNCMachine())).ToString();
+                BendRoll = Math.Round(Convert.ToDecimal(Fasil.setCNCMachine())).ToString();
             }
         }
-        private void BendingMachine()
+        private void BendingMachine5()
         {
-            Fasilitas FasilUtama = new Fasilitas();
-            FasilUtama.KapaMesin = 4;
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 6;
-            if (Convert.ToDecimal(FasilUtama.setPlateStr()) == 0)
+            Fasil.KapaMesin = 4;
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 6;
+            if (Fasil.setPlateStr() < 0.9)
             {
-                BendMachine500.Text = "1";
+                Bending5 = "1";
             }
             else
             {
-                BendMachine500.Text = Math.Round(Convert.ToDecimal(FasilUtama.setPlateStr())).ToString();
+                Bending5 = Math.Round(Convert.ToDecimal(Fasil.setBendingMachine())).ToString();
             }
         }
         private void WeldingMachine()
         {
-            FasilUtama.KecMesin = 0.38;
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.BebanKerja = 6;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setWeldingMachine() < 0.9)
+            Fasil.KecMesin = 0.38;
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 6;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setWeldingMachine() < 0.9)
             {
-                WeldMachine.Text = "1";
+                Welding = "1";
             }
             else
             {
-                WeldMachine.Text = Math.Round(Convert.ToDecimal(FasilUtama.setWeldingMachine())).ToString();
+                Welding = Math.Round(Convert.ToDecimal(Fasil.setWeldingMachine())).ToString();
             }
         }
         private void MobileWebGantry()
         {
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.BebanKerja = 7;
-            FasilUtama.KapaBebanMesin = 0.5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setPlateStr() < 0.9)
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 7;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setPlateStr() < 0.9)
             {
-                MobileWeb.Text = "1";
+                Gantry = "1";
             }
             else
             {
-                MobileWeb.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                Gantry = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void ServiceWelding()
         {
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.BebanKerja = 5;
-            FasilUtama.WstKapal = Wst;
-            FasilUtama.KapaBebanMesin = 0.5;
-            if (FasilUtama.setPlateStr() < 0.9)
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 5;
+            Fasil.BeratBaja = Wst;
+            Fasil.KapaBebanMesin = 0.5;
+            if (Fasil.setPlateStr() < 0.9)
             {
-                ServiceWeld.Text = "1";
+                ServiceWeld = "1";
             }
             else
             {
-                ServiceWeld.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                ServiceWeld = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void MobileStiffener()
         {
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.BebanKerja = 6;
-            FasilUtama.WstKapal = Wst;
-            FasilUtama.KapaBebanMesin = 0.38;
-            if (FasilUtama.setMobileWeb() < 0.9)
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 6;
+            Fasil.BeratBaja = Wst;
+            Fasil.KapaBebanMesin = 0.38;
+            if (Fasil.setMobileWeb() < 0.9)
             {
-                MobileStiff.Text = "1";
+                Stiffener = "1";
             }
             else
             {
-                MobileStiff.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                Stiffener = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void TransferTrolley()
         {
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.BebanKerja = 5;
-            FasilUtama.KapaBebanMesin = 5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setMobileWeb() < 0.9)
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 5;
+            Fasil.KapaBebanMesin = 5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
             {
-                TransferTroll.Text = "1";
+                Trolley = "1";
             }
             else
             {
-                TransferTroll.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                Trolley = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void FilletWelding()
         {
-            FasilUtama.WaktuKerja = 3;
-            FasilUtama.BebanKerja = 5;
-            FasilUtama.KapaBebanMesin = 0.5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setMobileWeb() < 0.9)
+            Fasil.WaktuKerja = 3;
+            Fasil.BebanKerja = 5;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
             {
-                FilletWeld.Text = "1";
+                FilletWeld = "1";
             }
             else
             {
-                FilletWeld.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                FilletWeld = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void NCPipe()
         {
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 5;
-            FasilUtama.KapaBebanMesin = 0.5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setMobileWeb() < 0.9)
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 5;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
             {
-                NcPipe.Text = "1";
+                NCPip = "1";
             }
             else
             {
-                NcPipe.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                NCPip = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void SemiAutoGas()
         {
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 8;
-            FasilUtama.KapaBebanMesin = 0.5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setMobileWeb() < 0.9)
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 8;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
             {
-                SemiAuto.Text = "1";
+                SemiAuto = "1";
             }
             else
             {
-                SemiAuto.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                SemiAuto = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void PipeBender()
         {
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 7;
-            FasilUtama.KapaBebanMesin = 0.5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setMobileWeb() < 0.9)
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 7;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
             {
-                PipeBend50.Text = "1";
+                PipeBend = "1";
             }
             else
             {
-                PipeBend50.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                PipeBend = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void PipeBender65()
         {
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 5;
-            FasilUtama.KapaBebanMesin = 0.5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setMobileWeb() < 0.9)
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 5;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
             {
-                PipeBend65.Text = "1";
+                PipeBend65 = "1";
             }
             else
             {
-                PipeBend65.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                PipeBend65 = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
         }
         private void AutoGasCutting()
         {
-            FasilUtama.WaktuKerja = 2;
-            FasilUtama.BebanKerja = 8;
-            FasilUtama.KapaBebanMesin = 0.5;
-            FasilUtama.WstKapal = Wst;
-            if (FasilUtama.setMobileWeb() < 0.9)
+            Fasil.WaktuKerja = 2;
+            Fasil.BebanKerja = 8;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
             {
-                AutoGas.Text = "1";
+                AutoGasCutt = "1";
             }
             else
             {
-                AutoGas.Text = Math.Round(Convert.ToDecimal(FasilUtama.setMobileWeb())).ToString();
+                AutoGasCutt = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
             }
-        }*/
+        }
+        //Fasilitas Pendukung
+        private void GantryCrane()
+        {
+            Fasil.WaktuKerja = 12;
+            Fasil.BebanKerja = 7;
+            Fasil.KapaBebanMesin = 10;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
+            {
+                GCrane = "1";
+            }
+            else
+            {
+                GCrane = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
+            }
+        }
+        private void OverHeadCrane10()
+        {
+            Fasil.WaktuKerja = 12;
+            Fasil.BebanKerja = 7;
+            Fasil.KapaBebanMesin = 10;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
+            {
+                OHC10 = "1";
+            }
+            else
+            {
+                OHC10 = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
+            }
+        }
+        private void Transporter30()
+        {
+            Fasil.WaktuKerja = 12;
+            Fasil.BebanKerja = 6;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
+            {
+                T30 = "1";
+            }
+            else
+            {
+                T30 = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
+            }
+        }
+        private void Transporter15()
+        {
+            Fasil.WaktuKerja = 12;
+            Fasil.BebanKerja = 7;
+            Fasil.KapaBebanMesin = 0.5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
+            {
+                T15 = "1";
+            }
+            else
+            {
+                T15 = Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
+            }
+        }
+        private void OverHeadCrane5()
+        {
+            Fasil.WaktuKerja = 12;
+            Fasil.BebanKerja = 5;
+            Fasil.KapaBebanMesin = 5;
+            Fasil.BeratBaja = Wst;
+            if (Fasil.setMobileWeb() < 0.9)
+            {
+                OHC5 = "1";
+            }
+            else
+            {
+                OHC5= Math.Round(Convert.ToDecimal(Fasil.setMobileWeb())).ToString();
+            }
+        }
     }
 }

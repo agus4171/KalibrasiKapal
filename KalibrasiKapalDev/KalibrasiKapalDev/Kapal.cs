@@ -21,6 +21,22 @@ namespace KalibrasiKapalDev
         private double dwt;
         private string muatan;
 
+        private string hitung;
+        private string nilai;
+        private string satuan;
+
+        public Kapal()
+        {
+
+        }
+        public Kapal(string nama, string hitung, string nilai, string satuan)
+        {
+            this.nama = nama;
+            this.hitung = hitung;
+            this.nilai = nilai;
+            this.satuan = satuan;
+        }
+
         public string Nama
         {
             get

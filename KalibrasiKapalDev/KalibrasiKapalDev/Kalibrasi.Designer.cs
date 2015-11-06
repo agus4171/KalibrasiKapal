@@ -38,7 +38,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Hitung = new System.Windows.Forms.Button();
             this.Jenis = new System.Windows.Forms.ComboBox();
             this.Loa = new System.Windows.Forms.TextBox();
             this.Lpp = new System.Windows.Forms.TextBox();
@@ -57,6 +57,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.BeratBaja = new System.Windows.Forms.ListBox();
+            this.Pekerja = new System.Windows.Forms.ListBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.Fasilitas = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // Nama
@@ -65,6 +72,7 @@
             this.Nama.Name = "Nama";
             this.Nama.Size = new System.Drawing.Size(100, 20);
             this.Nama.TabIndex = 1;
+            this.Nama.Text = "Kapal1";
             // 
             // label2
             // 
@@ -156,16 +164,16 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Jenis Muatan";
             // 
-            // button1
+            // Hitung
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(541, 207);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 30);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Hitung";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Hitung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hitung.Location = new System.Drawing.Point(541, 207);
+            this.Hitung.Name = "Hitung";
+            this.Hitung.Size = new System.Drawing.Size(90, 30);
+            this.Hitung.TabIndex = 12;
+            this.Hitung.Text = "Hitung";
+            this.Hitung.UseVisualStyleBackColor = true;
+            this.Hitung.Click += new System.EventHandler(this.Hitung_Click);
             // 
             // Jenis
             // 
@@ -182,6 +190,7 @@
             this.Loa.Name = "Loa";
             this.Loa.Size = new System.Drawing.Size(100, 20);
             this.Loa.TabIndex = 2;
+            this.Loa.Text = "157.50";
             // 
             // Lpp
             // 
@@ -189,6 +198,7 @@
             this.Lpp.Name = "Lpp";
             this.Lpp.Size = new System.Drawing.Size(100, 20);
             this.Lpp.TabIndex = 3;
+            this.Lpp.Text = "149.50";
             // 
             // Breadth
             // 
@@ -196,6 +206,7 @@
             this.Breadth.Name = "Breadth";
             this.Breadth.Size = new System.Drawing.Size(100, 20);
             this.Breadth.TabIndex = 4;
+            this.Breadth.Text = "27.70";
             // 
             // Depth
             // 
@@ -203,6 +214,7 @@
             this.Depth.Name = "Depth";
             this.Depth.Size = new System.Drawing.Size(100, 20);
             this.Depth.TabIndex = 5;
+            this.Depth.Text = "12.00";
             // 
             // Speed
             // 
@@ -210,6 +222,7 @@
             this.Speed.Name = "Speed";
             this.Speed.Size = new System.Drawing.Size(121, 20);
             this.Speed.TabIndex = 7;
+            this.Speed.Text = "12";
             // 
             // Jumlah
             // 
@@ -224,6 +237,7 @@
             this.Dwt.Name = "Dwt";
             this.Dwt.Size = new System.Drawing.Size(121, 20);
             this.Dwt.TabIndex = 10;
+            this.Dwt.Text = "17500";
             // 
             // Muatan
             // 
@@ -258,6 +272,7 @@
             this.Draught.Name = "Draught";
             this.Draught.Size = new System.Drawing.Size(100, 20);
             this.Draught.TabIndex = 6;
+            this.Draught.Text = "7.00";
             // 
             // label13
             // 
@@ -319,11 +334,88 @@
             this.label18.TabIndex = 31;
             this.label18.Text = "knot";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(9, 300);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 16);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Berat Baja";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(240, 300);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 16);
+            this.label19.TabIndex = 37;
+            this.label19.Text = "Fasilitas";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(510, 300);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(62, 16);
+            this.label20.TabIndex = 38;
+            this.label20.Text = "Pekerja";
+            // 
+            // BeratBaja
+            // 
+            this.BeratBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BeratBaja.FormattingEnabled = true;
+            this.BeratBaja.ItemHeight = 15;
+            this.BeratBaja.Location = new System.Drawing.Point(12, 324);
+            this.BeratBaja.Name = "BeratBaja";
+            this.BeratBaja.Size = new System.Drawing.Size(220, 229);
+            this.BeratBaja.TabIndex = 39;
+            // 
+            // Pekerja
+            // 
+            this.Pekerja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pekerja.FormattingEnabled = true;
+            this.Pekerja.ItemHeight = 15;
+            this.Pekerja.Location = new System.Drawing.Point(513, 324);
+            this.Pekerja.Name = "Pekerja";
+            this.Pekerja.Size = new System.Drawing.Size(260, 229);
+            this.Pekerja.TabIndex = 41;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(273, 31);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(59, 15);
+            this.label21.TabIndex = 42;
+            this.label21.Text = "* wajib isi";
+            // 
+            // Fasilitas
+            // 
+            this.Fasilitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fasilitas.FormattingEnabled = true;
+            this.Fasilitas.ItemHeight = 15;
+            this.Fasilitas.Location = new System.Drawing.Point(243, 324);
+            this.Fasilitas.Name = "Fasilitas";
+            this.Fasilitas.Size = new System.Drawing.Size(260, 229);
+            this.Fasilitas.TabIndex = 43;
+            // 
             // Kalibrasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.Fasilitas);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.Pekerja);
+            this.Controls.Add(this.BeratBaja);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -342,7 +434,7 @@
             this.Controls.Add(this.Lpp);
             this.Controls.Add(this.Loa);
             this.Controls.Add(this.Jenis);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Hitung);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -356,7 +448,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Kalibrasi";
-            this.Text = "Kalibrasi";
+            this.Text = "Kalibrasi Kapal";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,7 +465,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Hitung;
         private System.Windows.Forms.ComboBox Jenis;
         private System.Windows.Forms.TextBox Loa;
         private System.Windows.Forms.TextBox Lpp;
@@ -392,5 +484,12 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ListBox BeratBaja;
+        private System.Windows.Forms.ListBox Pekerja;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ListBox Fasilitas;
     }
 }

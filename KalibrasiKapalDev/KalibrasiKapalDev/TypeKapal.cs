@@ -11,6 +11,11 @@ namespace KalibrasiKapalDev
         private double cso;
         private string type;
 
+        public TypeKapal()
+        {
+
+        }
+
         public TypeKapal(string type, double cso)
         {
             this.cso = cso;
