@@ -9,7 +9,6 @@ namespace KalibrasiKapalDev
     class Kapal
     {
         private string nama;
-        private double kapal = 9602.7891;
         private double loa;
         private double lpp;
         private double breadth;
@@ -249,7 +248,7 @@ namespace KalibrasiKapalDev
         }
         public double setU()
         {
-            return Math.Log10(kapal / 100);
+            return Math.Log10(setD() / 100);
         }
         public double setCs()
         {
@@ -257,7 +256,7 @@ namespace KalibrasiKapalDev
         }
         public double setWst()
         {
-            return Lpp * Breadth * setDa() * setCs();
+            return Lpp * Breadth * setDa() * setCs() * Jumlah;
         }
     }
 }

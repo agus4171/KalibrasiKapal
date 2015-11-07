@@ -10,7 +10,6 @@ F:\TEMP\PROYEK\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.p
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\bin\Debug\KalibrasiKapalDev.exe.config
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\bin\Debug\KalibrasiKapalDev.exe
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\bin\Debug\KalibrasiKapalDev.pdb
-F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.csprojResolveAssemblyReference.cache
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.Kalibrasi.resources
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.Login.resources
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.Properties.Resources.resources
