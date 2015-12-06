@@ -149,40 +149,40 @@ namespace KalibrasiKapalDev
             }
         }
 
-        public double setPlateStr()
+        public double PlateStr()
         {
             return (KecMesin * BebanKerja) / (WaktuKerja * 60 * 0.8);
         }
 
-        public double setCuttMachine()
+        public double CuttMachine()
         {
             return (BajaHariD * KapaMesinD) / (WaktuKerja * 60 * 0.8);
         }
 
-        public double setBendingMachine()
+        public double BendingMachine()
         {
             return ((BeratBaja / (BajaHariLbr * (BebanKerja / 60)) * 0.8)) / WaktuKerja;
         }
 
-        public double setCNCMachine()
+        public double CNCMachine()
         {
             return (BeratBaja / WaktuKerja / BajaHariLbr) * KapaMesin / WaktuKerja * 0.8;
         }
 
-        public double setCuttMachineAuto()
+        public double CuttMachineAuto()
         {
             return (BajaHariD / BajaHariLbr) * 0.8;
         }
 
-        public double setBendRollMachine()
+        public double BendRollMachine()
         {
             return (BeratBaja / (BajaHariD * WaktuKerja * KapaMesin)) * 0.8;
         }
-        public double setWeldingMachine()
+        public double WeldingMachine()
         {
             return BajaHariD * 12 * 0.243 * 12 / (5 * BebanKerja * KecMesin * 0.8);
         }
-        public double setMobileWeb()
+        public double MobileWeb()
         {
             return BajaHariD * BajaHariD / BebanKerja / (WaktuKerja * 60 * 0.8 * KapaBebanMesin);
         }

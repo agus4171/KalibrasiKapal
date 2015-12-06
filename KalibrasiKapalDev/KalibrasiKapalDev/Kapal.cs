@@ -180,83 +180,83 @@ namespace KalibrasiKapalDev
         }
 
         //pengolahan dari inputan
-        public double setFn()
+        public double Fn()
         {
             return Speed / Math.Sqrt(9.81 * Lpp);
         }
-        public double setLwl()
+        public double Lwl()
         {
             return 1.04 * Lpp;
         }
-        public double setCb()
+        public double Cb()
         {
-            return (-4.22) + (27.8 * (Math.Sqrt(setFn()))) - (39.1 * setFn()) + (46.4 * Math.Pow(setFn(), 3));
+            return (-4.22) + (27.8 * (Math.Sqrt(Fn()))) - (39.1 * Fn()) + (46.4 * Math.Pow(Fn(), 3));
         }
-        public double setV()
+        public double V()
         {
-            return Lpp * Breadth * Draught * setCb();
+            return Lpp * Breadth * Draught * Cb();
         }
-        public double setD()
+        public double D()
         {
-            return setV() * 1.025;
+            return V() * 1.025;
         }
 
         //perhitungan volume superstructure
-        public double setVForcastle()
+        public double VForcastle()
         {
             return 0.5 * (0.1 * Lpp) * Dwt * 2.4;
         }
-        public double setVPoop()
+        public double VPoop()
         {
             return (0.2 * Lpp) * Dwt * 2.4;
         }
-        public double setVTotal()
+        public double VTotal()
         {
-            return setVForcastle() + setVPoop();
+            return VForcastle() + VPoop();
         }
 
         //perhitungan volume deckhouse
-        public double setVDH_ll()
+        public double VDH_ll()
         {
             return (0.15 * Lpp) * 13.00 * 2.4;
         }
-        public double setVDH_lll()
+        public double VDH_lll()
         {
             return (0.1 * Lpp) * 11.00 * 2.4;
         }
-        public double setVDH_lV()
+        public double VDH_lV()
         {
             return (0.075 * Lpp) * 9.00 * 2.4;
         }
-        public double setVWH()
+        public double VWH()
         {
             return (0.05 * Lpp) * 6.00 * 2.4;
         }
-        public double setVDH()
+        public double VDH()
         {
-            return setVDH_ll() + setVDH_lll() + setVDH_lV() + setVWH();
+            return VDH_ll() + VDH_lll() + VDH_lV() + VWH();
         }
 
         //perhitungan berat baja
         public double setDa()
         {
-            return Depth + (setVTotal() + setVDH()) / (Lpp * Breadth);
+            return Depth + (VTotal() + VDH()) / (Lpp * Breadth);
         }
-        public double setCso()
+        public double Cso()
         {
             return Jenis;
         }
-        public double setU()
+        public double U()
         {
-            return Math.Log10(setD() / 100);
+            return Math.Log10(D() / 100);
         }
-        public double setCs()
+        public double Cs()
         {
-            return setCso() + (0.06 * Math.Exp(-(0.5 * setU()) + (0.1 * Math.Pow(setU(), 2.45))));
+            return Cso() + (0.06 * Math.Exp(-(0.5 * U()) + (0.1 * Math.Pow(U(), 2.45))));
         }
-        public double setWst()
+        public double Wst()
         {
-            return Lpp * Breadth * setDa() * setCs() * Jumlah;
+            return Lpp * Breadth * setDa() * Cs() * Jumlah;
         }
     }
 }
