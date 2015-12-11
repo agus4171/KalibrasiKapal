@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Shop.cs" />
-    <Compile Include="Fasilitas.cs" />
     <Compile Include="Kalibrasi.cs">
       <SubType>Form</SubType>
     </Compile>

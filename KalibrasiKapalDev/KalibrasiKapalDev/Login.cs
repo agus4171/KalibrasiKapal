@@ -22,7 +22,7 @@ namespace KalibrasiKapalDev
 
         }
 
-        private void Masuk_Click(object sender, EventArgs e)
+        private void Masuk_Click_1(object sender, EventArgs e)
         {
             if (this.username.Text == "admin" && this.password.Text == "admin")
             {

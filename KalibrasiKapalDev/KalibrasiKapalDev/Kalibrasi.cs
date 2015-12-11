@@ -16,8 +16,7 @@ namespace KalibrasiKapalDev
             InitializeComponent();
             TypeKapal();
         }
-        
-        Fasilitas Fasil = new Fasilitas();
+
         Kapal KapalBaru = new Kapal();
         KapasitasBengkel KapaBengkel = new KapasitasBengkel();
         Shop AssShop = new Shop();
@@ -27,36 +26,9 @@ namespace KalibrasiKapalDev
         Shop PipeShop = new Shop();
 
         private List<TypeKapal> List = new List<TypeKapal>();
-        private string Plate;
-        private string Conveyor;
-        private string Blasting;
-        private string Primering;
-        private string Cutting;
-        private string Bending10;
-        private string Bender;
-        private string CNC;
-        private string CuttingAuto;
-        private string BendRoll;
-        private string Bending5;
-        private string Welding;
-        private string Gantry;
-        private string ServiceWeld;
-        private string Stiffener;
-        private string Trolley;
-        private string FilletWeld;
-        private string NCPip;
-        private string SemiAuto;
-        private string PipeBend;
-        private string PipeBend65;
-        private string AutoGasCutt;
-        private string GCrane;
-        private string OHC10;
-        private string T30;
-        private string T15;
-        private string OHC5;
         private double Wst;
         private double Cso;
-        private string text = "1";
+        private int i=1;        
 
         private void TypeKapal(){
             Jenis.Items.Clear();
@@ -77,96 +49,6 @@ namespace KalibrasiKapalDev
                 Jenis.Items.Add(list.Type);
             }
         }
-
-        /*private void HitungKapal(){
-            BeratBaja.Items.Add("1. Nama Kapal: " + KapalBaru.Nama);
-            BeratBaja.Items.Add("2. Froude Number: " + KapalBaru.Fn().ToString("0.###") +"");
-            BeratBaja.Items.Add("3. Panjang Garis Air: " + KapalBaru.Lwl().ToString("0.###") +" m");
-            BeratBaja.Items.Add("4. Volume Displasemen: " + KapalBaru.V().ToString("0.###") +" m^3");
-            BeratBaja.Items.Add("5. Displasemen: " + KapalBaru.D().ToString("0.###") +" ton");
-            BeratBaja.Items.Add("6. Coeffisien Block: " + KapalBaru.Cb().ToString("0.###") +"");
-            BeratBaja.Items.Add("7. Volume Forecastle: " + KapalBaru.VForcastle().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("8. Volume Poop: " + KapalBaru.VPoop().ToString("0.###") +" m^3");
-            BeratBaja.Items.Add("9. Volume Total(Va): " + KapalBaru.VTotal().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("10. Volume Layer II: " + KapalBaru.VDH_ll().ToString("0.###") +" m^3");
-            BeratBaja.Items.Add("11. Volume Layer III: " + KapalBaru.VDH_lll().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("12. Volume Layer IV: " + KapalBaru.VDH_lV().ToString("0.###") +" m^3");
-            BeratBaja.Items.Add("13. Volume Wheel House: " + KapalBaru.VWH().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("14. Volume Total(Vdh): " + KapalBaru.VDH().ToString("0.###") + " m^3");
-            BeratBaja.Items.Add("15. Tinggi Kapal(Da): " + KapalBaru.D().ToString("0.###") + " m");
-            BeratBaja.Items.Add("16. U: " + KapalBaru.U().ToString("0.###") + "");
-            BeratBaja.Items.Add("17. Cs: " + KapalBaru.Cs().ToString("0.###") + "");
-            BeratBaja.Items.Add("18. Berat Baja Total: " + KapalBaru.Wst().ToString("0.###") + " ton");
-            BeratBaja.Items.Add("");
-        }
-
-        private void HitungFasilitas(){
-            Fasilitas.Items.Add("Nama Kapal: " + KapalBaru.Nama);
-            Fasilitas.Items.Add("Fasilitas Utama:");
-            Fasilitas.Items.Add("1. Plate Straightening Roller: " + Plate + " mesin");
-            Fasilitas.Items.Add("2. Roller Conveyor: " + Conveyor + " mesin");
-            Fasilitas.Items.Add("3. Shot Blasting: " + Blasting + " mesin");
-            Fasilitas.Items.Add("4. Primering Machine: " + Primering+ " mesin");
-            Fasilitas.Items.Add("5. Cutting Machine (NC SAFRO): " + Cutting + " mesin");
-            Fasilitas.Items.Add("6. Bending Machine 1000 Ton: " + Bending10 + " mesin");
-            Fasilitas.Items.Add("7. Frame Bender: " + Bender + " mesin");
-            Fasilitas.Items.Add("8. CNC Cutting (Plasma): " + CNC + " mesin");
-            Fasilitas.Items.Add("9. Cutting Machine (Semi Automatic): " + CuttingAuto + " mesin");
-            Fasilitas.Items.Add("10. Bending Roll Machine 1500 Ton: " + BendRoll + " mesin");
-            Fasilitas.Items.Add("11. Bending Machine 500 Ton: " + Bending5 + " mesin");
-            Fasilitas.Items.Add("12. Welding Machine FCAW (Semi Automatic): " + Welding + " mesin");
-            Fasilitas.Items.Add("13. Mobile Web Gantry: " + Gantry + " mesin");
-            Fasilitas.Items.Add("14. Service Welding Gantry: " + ServiceWeld + " mesin");
-            Fasilitas.Items.Add("15. Mobile Stiffener Gantry: " + Stiffener + " mesin");
-            Fasilitas.Items.Add("16. Transfer Trolley: " + Trolley + " mesin");
-            Fasilitas.Items.Add("17. Fillet Welding Gantry: " + FilletWeld + " mesin");
-            Fasilitas.Items.Add("18. NC Pipe Bender: " + NCPip + " mesin");
-            Fasilitas.Items.Add("19. Semi Auto Gas Cutting: " + SemiAuto + " mesin");
-            Fasilitas.Items.Add("20. Pipe Bender 50 A: " + PipeBend + " mesin");
-            Fasilitas.Items.Add("21. Pipe Bender 65 A: " + PipeBend65 + " mesin");
-            Fasilitas.Items.Add("22. Auto Gas Cutting Machine: " + AutoGasCutt + " mesin");
-            Fasilitas.Items.Add("Fasilitas Pendukung:");
-            Fasilitas.Items.Add("1. Gantry Crane: " + GCrane + " mesin");
-            Fasilitas.Items.Add("2. Over Head Crane 10 Ton: " + OHC10 + " mesin");
-            Fasilitas.Items.Add("3. Transporter 300 Ton: " + T30 + " mesin");
-            Fasilitas.Items.Add("4. Transporter 150 TOn: " + T15 + " mesin");
-            Fasilitas.Items.Add("5. Over Head Crane 5 Ton: " + OHC5 + " mesin");
-            Fasilitas.Items.Add("");
-        }
-
-        private void HitungPekerja(){
-            Pekerja.Items.Add("Nama Kapal: " + KapalBaru.Nama);
-            Pekerja.Items.Add("Fasilitas Utama:");
-            Pekerja.Items.Add("Plate Straightening Roller: " + 0 + " orang");
-            Pekerja.Items.Add("Roller Conveyor: " + 0 + " orang");
-            Pekerja.Items.Add("Shot Blasting: " + 0 + " orang");
-            Pekerja.Items.Add("Primering Machine: " + 0+ " orang");
-            Pekerja.Items.Add("Cutting Machine (NC SAFRO): " + 0 + " orang");
-            Pekerja.Items.Add("Bending Machine 1000 Ton: " + 0 + " orang");
-            Pekerja.Items.Add("Frame Bender: " + 0 + " orang");
-            Pekerja.Items.Add("CNC Cutting (Plasma): " + 0 + " orang");
-            Pekerja.Items.Add("Cutting Machine (Semi Automatic): " + 0 + " orang");
-            Pekerja.Items.Add("Bending Roll Machine 1500 Ton: " + 0 + " orang");
-            Pekerja.Items.Add("Bending Machine 500 Ton: " + 0 + " orang");
-            Pekerja.Items.Add("Welding Machine FCAW (Semi Automatic): " + 0 + " orang");
-            Pekerja.Items.Add("Mobile Web Gantry: " + 0 + " orang");
-            Pekerja.Items.Add("Service Welding Gantry: " + 0 + " orang");
-            Pekerja.Items.Add("Mobile Stiffener Gantry: " + 0 + " orang");
-            Pekerja.Items.Add("Transfer Trolley: " + 0 + " orang");
-            Pekerja.Items.Add("Fillet Welding Gantry: " + 0 + " orang");
-            Pekerja.Items.Add("NC Pipe Bender: " + 0 + " orang");
-            Pekerja.Items.Add("Semi Auto Gas Cutting: " + 0 + " orang");
-            Pekerja.Items.Add("Pipe Bender 50 A: " + 0 + " orang");
-            Pekerja.Items.Add("Pipe Bender 65 A: " + 0 + " orang");
-            Pekerja.Items.Add("Auto Gas Cutting Machine: " + 0 + " orang");
-            Pekerja.Items.Add("Fasilitas Pendukung:");
-            Pekerja.Items.Add("Gantry Crane: " + 0 + " orang");
-            Pekerja.Items.Add("Over Head Crane 10 Ton: " + 0 + " orang");
-            Pekerja.Items.Add("Transporter 300 Ton: " + 0 + " orang");
-            Pekerja.Items.Add("Transporter 150 TOn: " + 0 + " orang");
-            Pekerja.Items.Add("Over Head Crane 5 Ton: " + 0 + " orang");
-            Pekerja.Items.Add("");
-        }*/
 
         private void Hitung_Click_1(object sender, EventArgs e){
             if (!string.IsNullOrWhiteSpace(Nama.Text)){
@@ -242,12 +124,19 @@ namespace KalibrasiKapalDev
             }
 
             //Jenis_SelectedIndexChanged(object sender, EventArgs e);
-
             fn.Text = KapalBaru.Fn().ToString("0.###");
             lwl.Text = KapalBaru.Lwl().ToString("0.###");
             v.Text = KapalBaru.V().ToString("0.###");
             d.Text = KapalBaru.D().ToString("0.###");
             cb.Text = KapalBaru.Cb().ToString("0.###");
+            ListViewItem Koef = new ListViewItem(i.ToString());
+            Koef.SubItems.Add(KapalBaru.Nama);
+            Koef.SubItems.Add(fn.Text);
+            Koef.SubItems.Add(lwl.Text);
+            Koef.SubItems.Add(v.Text);
+            Koef.SubItems.Add(d.Text);
+            Koef.SubItems.Add(cb.Text);
+            Koefisien.Items.Add(Koef);
 
             vf.Text = KapalBaru.VForcastle().ToString("0.###");
             vp.Text = KapalBaru.VPoop().ToString("0.###");
@@ -265,42 +154,23 @@ namespace KalibrasiKapalDev
             wstbaja.Text = KapalBaru.Wst().ToString("0.###");
             totalBaja.Text = KapalBaru.Wst().ToString("0.###");
 
-            //d.Text = KapalBaru.D().ToString("0.###");
+            ListViewItem Baja = new ListViewItem(i.ToString());
+            Baja.SubItems.Add(vf.Text);
+            Baja.SubItems.Add(vp.Text);
+            Baja.SubItems.Add(va.Text);
+            Baja.SubItems.Add(vdhb.Text);
+            Baja.SubItems.Add(vdhc.Text);
+            Baja.SubItems.Add(vdhd.Text);
+            Baja.SubItems.Add(vdhw.Text);
+            Baja.SubItems.Add(vdh.Text);
+            Baja.SubItems.Add(csobaja.Text);
+            Baja.SubItems.Add(u.Text);
+            Baja.SubItems.Add(cs.Text);
+            Baja.SubItems.Add(kapalbaja.Text);
+            Baja.SubItems.Add(wstbaja.Text);
+            BeratBaja.Items.Add(Baja);
+
             Wst = KapalBaru.Wst();
-            //beratBaja
-            //HitungKapal();
-            //fasilitas utama
-            /*PlateStraightening();
-            RollerConveyor();
-            ShotBlasting();
-            PrimeringMachine();
-            CuttingMachine();
-            BendingMachine10();
-            FrameBender();
-            CNCCutting();
-            CuttingMachineAuto();
-            //BendRollMachine();
-            BendingMachine5();
-            WeldingMachine();
-            MobileWebGantry();
-            ServiceWelding();
-            MobileStiffener();
-            TransferTrolley();
-            FilletWelding();
-            NCPipe();
-            SemiAutoGas();
-            PipeBender();
-            PipeBender65();
-            AutoGasCutting();
-            //fasilitas tambahan
-            GantryCrane();
-            OverHeadCrane10();
-            Transporter30();
-            Transporter15();
-            OverHeadCrane5();
-            //fasilitas      
-            //HitungFasilitas();
-            //HitungPekerja();*/
         }
 
         private void Jenis_SelectedIndexChanged(object sender, EventArgs e){
@@ -309,30 +179,8 @@ namespace KalibrasiKapalDev
             Cso = Kapal.Cso;
         }
 
-        private void hitungFCAW_Click(object sender, EventArgs e){
-            if (!string.IsNullOrWhiteSpace(kecMesinFCAW.Text)){
-                AssShop.KecMesin = double.Parse(kecMesinFCAW.Text);
-            }
-            if (!string.IsNullOrWhiteSpace(legFCAW.Text)){
-                AssShop.LegLength = double.Parse(legFCAW.Text);
-            }
-            if (!string.IsNullOrWhiteSpace(lasFCAW.Text)){
-                AssShop.PanjangLas = double.Parse(lasFCAW.Text);
-            }
-            if (!string.IsNullOrWhiteSpace(electrodaFCAW.Text)){
-                AssShop.Elektroda = double.Parse(electrodaFCAW.Text);
-            }
-            if (!string.IsNullOrWhiteSpace(jamKerjaFCAW.Text)){
-                AssShop.JamMesin = double.Parse(jamKerjaFCAW.Text);
-                AssShop.OperasiMesin = double.Parse(jamKerjaFCAW.Text);
-            }
-            AssShop.WaktuKerja = KapaBengkel.AssShop * KapaBengkel.Bulan;
-            jumMesinFCAW.Text = AssShop.FCAW().ToString();
-            jumPekerjaFCAW.Text = AssShop.PekerjaFCAW().ToString();
-            totalPekerjaFCAW.Text = AssShop.TotalPekerjaFCAW().ToString();
-        }
-
-        private void hitungWaktuPengerjaan_Click(object sender, EventArgs e){
+        private void hitungWaktuPengerjaan_Click(object sender, EventArgs e)
+        {
             if (!string.IsNullOrWhiteSpace(preShop.Text)){
                 KapaBengkel.PrepShop = int.Parse(preShop.Text);
             }
@@ -373,6 +221,25 @@ namespace KalibrasiKapalDev
             totalPengerjaan.Text = KapaBengkel.TotalPengerjaan().ToString();
             totalHari.Text = KapaBengkel.TotalPengerjaanHari().ToString();
             totalJam.Text = KapaBengkel.TotalPengerjaanJam().ToString();
+
+            ListViewItem KapasitasBengkel = new ListViewItem(i.ToString());
+            KapasitasBengkel.SubItems.Add(preShop.Text);
+            KapasitasBengkel.SubItems.Add(fabShop.Text);
+            KapasitasBengkel.SubItems.Add(subassShop.Text);
+            KapasitasBengkel.SubItems.Add(assemblyShop.Text);
+            KapasitasBengkel.SubItems.Add(pipeShop.Text);
+            KapasitasBengkel.SubItems.Add(totalPengerjaan.Text);
+            KapasitasBengkel.SubItems.Add(jamOrg.Text);
+            KapasitasBengkel.SubItems.Add(bulanOrg.Text);
+            KapasitasBengkel.SubItems.Add(totalHari.Text);
+            KapasitasBengkel.SubItems.Add(totalJam.Text);
+
+            KapasitasBengkel.SubItems.Add(preShopB.Text);
+            KapasitasBengkel.SubItems.Add(fabShopB.Text);
+            KapasitasBengkel.SubItems.Add(subAssShopB.Text);
+            KapasitasBengkel.SubItems.Add(assShopB.Text);
+            KapasitasBengkel.SubItems.Add(pipeShopB.Text);
+            Bengkel.Items.Add(KapasitasBengkel);
             //Assembly Shop
             AssShop.KapaBengkel = KapaBengkel.AssShopB;
             AssShop.Beratbaja = Wst;
@@ -397,7 +264,22 @@ namespace KalibrasiKapalDev
             FabShop.WaktuKerja = KapaBengkel.FabShop * KapaBengkel.Bulan;
             FabShop.JamOrang = KapaBengkel.JamOrg;
             FabShop.KapaBengkel = KapaBengkel.FabShopB;
+            //pipe shop
+            PipeShop.Beratbaja = Wst;
+            PipeShop.KapaBengkel = KapaBengkel.PipeShopB;
+            PipeShop.JamOrang = KapaBengkel.JamOrg;
+            PipeShop.JamOrangMnt = KapaBengkel.JamOrg;
+            PipeShop.WaktuKerja = KapaBengkel.PipeShop * KapaBengkel.Bulan;
+            waktuKerjaRollerPipe.Text = PipeShop.WaktuKerja.ToString();
+            jamOrangRollerPipe.Text = PipeShop.JamOrangMnt.ToString();
 
+            /*waktuKerjaShot.Text = PreShop.WaktuKerja.ToString();
+            jamOrangShot.Text = PreShop.JamOrangMnt.ToString();
+            waktuKerjaPrime.Text = PreShop.WaktuKerja.ToString();
+            jamOrangPrime.Text = PreShop.JamOrangMnt.ToString();
+            waktuKerjaRoller.Text = PreShop.WaktuKerja.ToString();
+            jamOrangRoller.Text = PreShop.JamOrangMnt.ToString();
+            */
             beratBajaNC.Text = FabShop.Beratbaja.ToString("0.###");
             waktuKerjaNC.Text = FabShop.WaktuKerja.ToString();
             jamOrangNCM.Text = FabShop.JamOrang.ToString();
@@ -433,11 +315,34 @@ namespace KalibrasiKapalDev
             beratBajaLine.Text = FabShop.Beratbaja.ToString("0.###");
             waktuKerjaLine.Text = FabShop.WaktuKerja.ToString();
             jamOrangLine.Text = FabShop.JamOrang.ToString();
-
-            /*beratBajaFlame.Text = FabShop.Beratbaja.ToString("0.###");
-            waktuKerjaFlame.Text = FabShop.WaktuKerja.ToString();
-            jamOrangFlame.Text = FabShop.JamOrang.ToString();*/
         }
+
+        private void hitungFCAW_Click(object sender, EventArgs e){
+            if (!string.IsNullOrWhiteSpace(kecMesinFCAW.Text)){
+                AssShop.KecMesin = double.Parse(kecMesinFCAW.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(legFCAW.Text)){
+                AssShop.LegLength = double.Parse(legFCAW.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(lasFCAW.Text)){
+                AssShop.PanjangLas = double.Parse(lasFCAW.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(electrodaFCAW.Text)){
+                AssShop.Elektroda = double.Parse(electrodaFCAW.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(jamKerjaFCAW.Text)){
+                AssShop.JamMesin = double.Parse(jamKerjaFCAW.Text);
+                AssShop.OperasiMesin = double.Parse(jamKerjaFCAW.Text);
+            }
+            AssShop.WaktuKerja = KapaBengkel.AssShop * KapaBengkel.Bulan;
+            jumMesinFCAW.Text = AssShop.FCAW().ToString();
+            jumPekerjaFCAW.Text = AssShop.PekerjaFCAW().ToString();
+            totalPekerjaFCAW.Text = AssShop.TotalPekerjaFCAW().ToString();
+            
+            //AssMesin.SubItems.Add(jumMesinFCAW.Text);
+            //AssPekerja.SubItems.Add(totalPekerjaFCAW.Text);
+            //Bengkel.Items.Add(KapasitasBengkel);
+        }        
 
         private void hitungSMAW_Click(object sender, EventArgs e){
             if (!string.IsNullOrWhiteSpace(kecMesinSMAW.Text)){
@@ -460,6 +365,8 @@ namespace KalibrasiKapalDev
             jumMesinSMAW.Text = AssShop.FCAW().ToString();
             jumPekerjaSMAW.Text = (AssShop.PekerjaFCAW()).ToString();
             totalPekerjaSMAW.Text = AssShop.TotalPekerjaFCAW().ToString();
+            
+
         }
 
         private void hitungCraneA_Click(object sender, EventArgs e){
@@ -780,6 +687,28 @@ namespace KalibrasiKapalDev
             lbrLine.Text = FabShop.LbrBaja().ToString("0.###");
             mesinLine.Text = FabShop.NC().ToString();
             pekerjaLine.Text = FabShop.TotalPekerjaNC().ToString();
+        }
+
+        private void hitungRollerPipe_Click(object sender, EventArgs e){
+            if (!string.IsNullOrWhiteSpace(kecMesinRollerPipe.Text)){
+                PipeShop.KecMesin = double.Parse(kecMesinRollerPipe.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(pelatRollerPipe.Text)){
+                PipeShop.PanjangPelat = double.Parse(pelatRollerPipe.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(beratPelatRollerPipe.Text)){
+                PipeShop.BeratPelat = double.Parse(beratPelatRollerPipe.Text);
+            }
+            if (!string.IsNullOrWhiteSpace(bebanMesinRollerPipe.Text)){
+                PipeShop.BebanMesin = double.Parse(bebanMesinRollerPipe.Text);
+            }
+            bebanMesinRollerPipeMnt.Text = PipeShop.BebanMesin.ToString();
+            mBajaRoller.Text = PipeShop.MRoller().ToString();
+            lbrBajaRoller.Text = PipeShop.LbrPlate().ToString();
+            kgBajaRoller.Text = PipeShop.KgPlate().ToString();
+            mesinRollerPipe.Text = PipeShop.Plate().ToString();
+            pekerjaRollerPipe.Text = PipeShop.PekerjaPlate().ToString();
+
         }
     }
 }
