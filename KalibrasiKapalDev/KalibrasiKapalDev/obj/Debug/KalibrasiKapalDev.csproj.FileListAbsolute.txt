@@ -17,12 +17,3 @@ F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\Kali
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.exe
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.pdb
 F:\TEMP\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.csprojResolveAssemblyReference.cache
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\bin\Debug\KalibrasiKapalDev.exe.config
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\bin\Debug\KalibrasiKapalDev.exe
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\bin\Debug\KalibrasiKapalDev.pdb
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.Kalibrasi.resources
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.Login.resources
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.Properties.Resources.resources
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.csproj.GenerateResource.Cache
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.exe
-D:\KULIAH\SMT 7\PROYEK\KalibrasiKapal\KalibrasiKapalDev\KalibrasiKapalDev\obj\Debug\KalibrasiKapalDev.pdb
